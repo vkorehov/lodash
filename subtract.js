@@ -1,8 +1,10 @@
-import createMathOperation from './.internal/createMathOperation.js'
+var createMathOperation = require('./_createMathOperation');
 
 /**
  * Subtract two numbers.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Math
  * @param {number} minuend The first number in a subtraction.
@@ -10,9 +12,11 @@ import createMathOperation from './.internal/createMathOperation.js'
  * @returns {number} Returns the difference.
  * @example
  *
- * subtract(6, 4)
+ * _.subtract(6, 4);
  * // => 2
  */
-const subtract = createMathOperation((minuend, subtrahend) => minuend - subtrahend, 0)
+var subtract = createMathOperation(function(minuend, subtrahend) {
+  return minuend - subtrahend;
+}, 0);
 
-export default subtract
+module.exports = subtract;

@@ -1,55 +1,58 @@
-import copyArray from './.internal/copyArray.js'
-import getTag from './.internal/getTag.js'
-import isArrayLike from './isArrayLike.js'
-import isString from './isString.js'
-import iteratorToArray from './.internal/iteratorToArray.js'
-import mapToArray from './.internal/mapToArray.js'
-import setToArray from './.internal/setToArray.js'
-import stringToArray from './.internal/stringToArray.js'
-import values from './values.js'
+var Symbol = require('./_Symbol'),
+    copyArray = require('./_copyArray'),
+    getTag = require('./_getTag'),
+    isArrayLike = require('./isArrayLike'),
+    isString = require('./isString'),
+    iteratorToArray = require('./_iteratorToArray'),
+    mapToArray = require('./_mapToArray'),
+    setToArray = require('./_setToArray'),
+    stringToArray = require('./_stringToArray'),
+    values = require('./values');
 
 /** `Object#toString` result references. */
-const mapTag = '[object Map]'
-const setTag = '[object Set]'
+var mapTag = '[object Map]',
+    setTag = '[object Set]';
 
 /** Built-in value references. */
-const symIterator = Symbol ? Symbol.iterator : undefined
+var symIterator = Symbol ? Symbol.iterator : undefined;
 
 /**
  * Converts `value` to an array.
  *
+ * @static
  * @since 0.1.0
+ * @memberOf _
  * @category Lang
  * @param {*} value The value to convert.
  * @returns {Array} Returns the converted array.
  * @example
  *
- * toArray({ 'a': 1, 'b': 2 })
+ * _.toArray({ 'a': 1, 'b': 2 });
  * // => [1, 2]
  *
- * toArray('abc')
+ * _.toArray('abc');
  * // => ['a', 'b', 'c']
  *
- * toArray(1)
+ * _.toArray(1);
  * // => []
  *
- * toArray(null)
+ * _.toArray(null);
  * // => []
  */
 function toArray(value) {
   if (!value) {
-    return []
+    return [];
   }
   if (isArrayLike(value)) {
-    return isString(value) ? stringToArray(value) : copyArray(value)
+    return isString(value) ? stringToArray(value) : copyArray(value);
   }
   if (symIterator && value[symIterator]) {
-    return iteratorToArray(value[symIterator]())
+    return iteratorToArray(value[symIterator]());
   }
-  const tag = getTag(value)
-  const func = tag == mapTag ? mapToArray : (tag == setTag ? setToArray : values)
+  var tag = getTag(value),
+      func = tag == mapTag ? mapToArray : (tag == setTag ? setToArray : values);
 
-  return func(value)
+  return func(value);
 }
 
-export default toArray
+module.exports = toArray;

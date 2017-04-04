@@ -1,41 +1,49 @@
-import castSlice from './.internal/castSlice.js'
-import charsEndIndex from './.internal/charsEndIndex.js'
-import charsStartIndex from './.internal/charsStartIndex.js'
-import stringToArray from './.internal/stringToArray.js'
+var baseToString = require('./_baseToString'),
+    castSlice = require('./_castSlice'),
+    charsEndIndex = require('./_charsEndIndex'),
+    charsStartIndex = require('./_charsStartIndex'),
+    stringToArray = require('./_stringToArray'),
+    toString = require('./toString');
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
 
 /**
  * Removes leading and trailing whitespace or specified characters from `string`.
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {string} Returns the trimmed string.
- * @see trimEnd, trimStart
  * @example
  *
- * trim('  abc  ')
+ * _.trim('  abc  ');
  * // => 'abc'
  *
- * trim('-_-abc-_-', '_-')
+ * _.trim('-_-abc-_-', '_-');
  * // => 'abc'
  *
- * map(['  foo  ', '  bar  '], trim)
+ * _.map(['  foo  ', '  bar  '], _.trim);
  * // => ['foo', 'bar']
  */
-function trim(string, chars) {
-  if (string && chars === undefined) {
-    return string.trim()
+function trim(string, chars, guard) {
+  string = toString(string);
+  if (string && (guard || chars === undefined)) {
+    return string.replace(reTrim, '');
   }
-  if (!string || !chars) {
-    return string
+  if (!string || !(chars = baseToString(chars))) {
+    return string;
   }
-  const strSymbols = stringToArray(string)
-  const chrSymbols = stringToArray(chars)
-  const start = charsStartIndex(strSymbols, chrSymbols)
-  const end = charsEndIndex(strSymbols, chrSymbols) + 1
+  var strSymbols = stringToArray(string),
+      chrSymbols = stringToArray(chars),
+      start = charsStartIndex(strSymbols, chrSymbols),
+      end = charsEndIndex(strSymbols, chrSymbols) + 1;
 
-  return castSlice(strSymbols, start, end).join('')
+  return castSlice(strSymbols, start, end).join('');
 }
 
-export default trim
+module.exports = trim;

@@ -1,9 +1,11 @@
-import baseSortedIndex from './.internal/baseSortedIndex.js'
+var baseSortedIndex = require('./_baseSortedIndex');
 
 /**
  * Uses a binary search to determine the lowest index at which `value`
  * should be inserted into `array` in order to maintain its sort order.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The sorted array to inspect.
@@ -12,11 +14,11 @@ import baseSortedIndex from './.internal/baseSortedIndex.js'
  *  into `array`.
  * @example
  *
- * sortedIndex([30, 50], 40)
+ * _.sortedIndex([30, 50], 40);
  * // => 1
  */
 function sortedIndex(array, value) {
-  return baseSortedIndex(array, value)
+  return baseSortedIndex(array, value);
 }
 
-export default sortedIndex
+module.exports = sortedIndex;

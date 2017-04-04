@@ -1,12 +1,15 @@
-import castPath from './.internal/castPath.js'
-import toKey from './.internal/toKey.js'
+var castPath = require('./_castPath'),
+    isFunction = require('./isFunction'),
+    toKey = require('./_toKey');
 
 /**
- * This method is like `get` except that if the resolved value is a
+ * This method is like `_.get` except that if the resolved value is a
  * function it's invoked with the `this` binding of its parent object and
  * its result is returned.
  *
+ * @static
  * @since 0.1.0
+ * @memberOf _
  * @category Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path of the property to resolve.
@@ -14,40 +17,40 @@ import toKey from './.internal/toKey.js'
  * @returns {*} Returns the resolved value.
  * @example
  *
- * const object = { 'a': [{ 'b': { 'c1': 3, 'c2': () => 4 } }] }
+ * var object = { 'a': [{ 'b': { 'c1': 3, 'c2': _.constant(4) } }] };
  *
- * result(object, 'a[0].b.c1')
+ * _.result(object, 'a[0].b.c1');
  * // => 3
  *
- * result(object, 'a[0].b.c2')
+ * _.result(object, 'a[0].b.c2');
  * // => 4
  *
- * result(object, 'a[0].b.c3', 'default')
+ * _.result(object, 'a[0].b.c3', 'default');
  * // => 'default'
  *
- * result(object, 'a[0].b.c3', () => 'default')
+ * _.result(object, 'a[0].b.c3', _.constant('default'));
  * // => 'default'
  */
 function result(object, path, defaultValue) {
-  path = castPath(path, object)
+  path = castPath(path, object);
 
-  let index = -1
-  let length = path.length
+  var index = -1,
+      length = path.length;
 
   // Ensure the loop is entered when path is empty.
   if (!length) {
-    length = 1
-    object = undefined
+    length = 1;
+    object = undefined;
   }
   while (++index < length) {
-    let value = object == null ? undefined : object[toKey(path[index])]
+    var value = object == null ? undefined : object[toKey(path[index])];
     if (value === undefined) {
-      index = length
-      value = defaultValue
+      index = length;
+      value = defaultValue;
     }
-    object = typeof value == 'function' ? value.call(object) : value
+    object = isFunction(value) ? value.call(object) : value;
   }
-  return object
+  return object;
 }
 
-export default result
+module.exports = result;

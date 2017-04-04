@@ -1,30 +1,46 @@
-import arrayFilter from './.internal/arrayFilter.js'
-import baseFilter from './.internal/baseFilter.js'
-import negate from './negate.js'
+var arrayFilter = require('./_arrayFilter'),
+    baseFilter = require('./_baseFilter'),
+    baseIteratee = require('./_baseIteratee'),
+    isArray = require('./isArray'),
+    negate = require('./negate');
 
 /**
- * The opposite of `filter` this method returns the elements of `collection`
+ * The opposite of `_.filter`; this method returns the elements of `collection`
  * that `predicate` does **not** return truthy for.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} predicate The function invoked per iteration.
+ * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new filtered array.
- * @see pull, pullAll, pullAllBy, pullAllWith, pullAt, remove, filter
+ * @see _.filter
  * @example
  *
- * const users = [
- *   { 'user': 'barney', 'active': true },
- *   { 'user': 'fred',   'active': false }
- * ]
+ * var users = [
+ *   { 'user': 'barney', 'age': 36, 'active': false },
+ *   { 'user': 'fred',   'age': 40, 'active': true }
+ * ];
  *
- * reject(users, ({ active }) => active)
+ * _.reject(users, function(o) { return !o.active; });
  * // => objects for ['fred']
+ *
+ * // The `_.matches` iteratee shorthand.
+ * _.reject(users, { 'age': 40, 'active': true });
+ * // => objects for ['barney']
+ *
+ * // The `_.matchesProperty` iteratee shorthand.
+ * _.reject(users, ['active', false]);
+ * // => objects for ['fred']
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.reject(users, 'active');
+ * // => objects for ['barney']
  */
 function reject(collection, predicate) {
-  const func = Array.isArray(collection) ? arrayFilter : baseFilter
-  return func(collection, negate(predicate))
+  var func = isArray(collection) ? arrayFilter : baseFilter;
+  return func(collection, negate(baseIteratee(predicate, 3)));
 }
 
-export default reject
+module.exports = reject;

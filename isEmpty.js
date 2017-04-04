@@ -1,13 +1,21 @@
-import baseKeys from './.internal/baseKeys.js'
-import getTag from './.internal/getTag.js'
-import isArguments from './isArguments.js'
-import isArrayLike from './isArrayLike.js'
-import isBuffer from './isBuffer.js'
-import isPrototype from './.internal/isPrototype.js'
-import isTypedArray from './isTypedArray.js'
+var baseKeys = require('./_baseKeys'),
+    getTag = require('./_getTag'),
+    isArguments = require('./isArguments'),
+    isArray = require('./isArray'),
+    isArrayLike = require('./isArrayLike'),
+    isBuffer = require('./isBuffer'),
+    isPrototype = require('./_isPrototype'),
+    isTypedArray = require('./isTypedArray');
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    setTag = '[object Set]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
 
 /** Used to check objects for own properties. */
-const hasOwnProperty = Object.prototype.hasOwnProperty
+var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Checks if `value` is an empty object, collection, map, or set.
@@ -19,49 +27,51 @@ const hasOwnProperty = Object.prototype.hasOwnProperty
  * jQuery-like collections are considered empty if they have a `length` of `0`.
  * Similarly, maps and sets are considered empty if they have a `size` of `0`.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is empty, else `false`.
  * @example
  *
- * isEmpty(null)
+ * _.isEmpty(null);
  * // => true
  *
- * isEmpty(true)
+ * _.isEmpty(true);
  * // => true
  *
- * isEmpty(1)
+ * _.isEmpty(1);
  * // => true
  *
- * isEmpty([1, 2, 3])
+ * _.isEmpty([1, 2, 3]);
  * // => false
  *
- * isEmpty({ 'a': 1 })
+ * _.isEmpty({ 'a': 1 });
  * // => false
  */
 function isEmpty(value) {
   if (value == null) {
-    return true
+    return true;
   }
   if (isArrayLike(value) &&
-      (Array.isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
+      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
         isBuffer(value) || isTypedArray(value) || isArguments(value))) {
-    return !value.length
+    return !value.length;
   }
-  const tag = getTag(value)
-  if (tag == '[object Map]' || tag == '[object Set]') {
-    return !value.size
+  var tag = getTag(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
   }
   if (isPrototype(value)) {
-    return !baseKeys(value).length
+    return !baseKeys(value).length;
   }
-  for (const key in value) {
+  for (var key in value) {
     if (hasOwnProperty.call(value, key)) {
-      return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 
-export default isEmpty
+module.exports = isEmpty;

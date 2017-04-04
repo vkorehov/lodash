@@ -1,8 +1,10 @@
-import createRound from './.internal/createRound.js'
+var createRound = require('./_createRound');
 
 /**
  * Computes `number` rounded down to `precision`.
  *
+ * @static
+ * @memberOf _
  * @since 3.10.0
  * @category Math
  * @param {number} number The number to round down.
@@ -10,15 +12,15 @@ import createRound from './.internal/createRound.js'
  * @returns {number} Returns the rounded down number.
  * @example
  *
- * floor(4.006)
+ * _.floor(4.006);
  * // => 4
  *
- * floor(0.046, 2)
+ * _.floor(0.046, 2);
  * // => 0.04
  *
- * floor(4060, -2)
+ * _.floor(4060, -2);
  * // => 4000
  */
-const floor = createRound('floor')
+var floor = createRound('floor');
 
-export default floor
+module.exports = floor;

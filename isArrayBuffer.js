@@ -1,27 +1,27 @@
-import baseGetTag from './.internal/baseGetTag.js'
-import isObjectLike from './isObjectLike.js'
-import nodeUtil from './.internal/nodeUtil.js'
+var baseIsArrayBuffer = require('./_baseIsArrayBuffer'),
+    baseUnary = require('./_baseUnary'),
+    nodeUtil = require('./_nodeUtil');
 
 /* Node.js helper references. */
-const nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer
+var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer;
 
 /**
  * Checks if `value` is classified as an `ArrayBuffer` object.
  *
+ * @static
+ * @memberOf _
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an array buffer, else `false`.
  * @example
  *
- * isArrayBuffer(new ArrayBuffer(2))
+ * _.isArrayBuffer(new ArrayBuffer(2));
  * // => true
  *
- * isArrayBuffer(new Array(2))
+ * _.isArrayBuffer(new Array(2));
  * // => false
  */
-const isArrayBuffer = nodeIsArrayBuffer
-  ? (value) => nodeIsArrayBuffer(value)
-  : (value) => isObjectLike(value) && baseGetTag(value) == '[object ArrayBuffer]'
+var isArrayBuffer = nodeIsArrayBuffer ? baseUnary(nodeIsArrayBuffer) : baseIsArrayBuffer;
 
-export default isArrayBuffer
+module.exports = isArrayBuffer;

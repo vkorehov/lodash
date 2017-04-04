@@ -1,13 +1,16 @@
-import baseUpdate from './.internal/baseUpdate.js'
+var baseUpdate = require('./_baseUpdate'),
+    castFunction = require('./_castFunction');
 
 /**
- * This method is like `update` except that it accepts `customizer` which is
- * invoked to produce the objects of `path`. If `customizer` returns `undefined`
+ * This method is like `_.update` except that it accepts `customizer` which is
+ * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
  * path creation is handled by the method instead. The `customizer` is invoked
  * with three arguments: (nsValue, key, nsObject).
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
+ * @memberOf _
  * @since 4.6.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -17,14 +20,14 @@ import baseUpdate from './.internal/baseUpdate.js'
  * @returns {Object} Returns `object`.
  * @example
  *
- * const object = {}
+ * var object = {};
  *
- * updateWith(object, '[0][1]', () => 'a', Object)
+ * _.updateWith(object, '[0][1]', _.constant('a'), Object);
  * // => { '0': { '1': 'a' } }
  */
 function updateWith(object, path, updater, customizer) {
-  customizer = typeof customizer == 'function' ? customizer : undefined
-  return object == null ? object : baseUpdate(object, path, updater, customizer)
+  customizer = typeof customizer == 'function' ? customizer : undefined;
+  return object == null ? object : baseUpdate(object, path, castFunction(updater), customizer);
 }
 
-export default updateWith
+module.exports = updateWith;

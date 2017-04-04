@@ -1,40 +1,34 @@
-import isSymbol from './isSymbol.js'
+var baseExtremum = require('./_baseExtremum'),
+    baseIteratee = require('./_baseIteratee'),
+    baseLt = require('./_baseLt');
 
 /**
- * This method is like `min` except that it accepts `iteratee` which is
+ * This method is like `_.min` except that it accepts `iteratee` which is
  * invoked for each element in `array` to generate the criterion by which
  * the value is ranked. The iteratee is invoked with one argument: (value).
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
- * @param {Function} iteratee The iteratee invoked per element.
+ * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {*} Returns the minimum value.
  * @example
  *
- * const objects = [{ 'n': 1 }, { 'n': 2 }]
+ * var objects = [{ 'n': 1 }, { 'n': 2 }];
  *
- * minBy(objects, ({ n }) => n)
+ * _.minBy(objects, function(o) { return o.n; });
+ * // => { 'n': 1 }
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.minBy(objects, 'n');
  * // => { 'n': 1 }
  */
 function minBy(array, iteratee) {
-  let result
-  if (array == null) {
-    return result
-  }
-  for (const value of array) {
-    let computed
-    const current = iteratee(value)
-
-    if (current != null && (computed === undefined
-          ? (current === current && !isSymbol(current))
-          : (current < computed)
-        )) {
-      computed = current
-      result = value
-    }
-  }
-  return result
+  return (array && array.length)
+    ? baseExtremum(array, baseIteratee(iteratee, 2), baseLt)
+    : undefined;
 }
 
-export default minBy
+module.exports = minBy;

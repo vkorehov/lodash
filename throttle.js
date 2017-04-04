@@ -1,5 +1,8 @@
-import debounce from './debounce.js'
-import isObject from './isObject.js'
+var debounce = require('./debounce'),
+    isObject = require('./isObject');
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
 
 /**
  * Creates a throttled function that only invokes `func` at most once per
@@ -19,8 +22,10 @@ import isObject from './isObject.js'
  * until to the next tick, similar to `setTimeout` with a timeout of `0`.
  *
  * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
- * for details over the differences between `throttle` and `debounce`.
+ * for details over the differences between `_.throttle` and `_.debounce`.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to throttle.
@@ -34,31 +39,31 @@ import isObject from './isObject.js'
  * @example
  *
  * // Avoid excessively updating the position while scrolling.
- * jQuery(window).on('scroll', throttle(updatePosition, 100))
+ * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
  *
  * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
- * const throttled = throttle(renewToken, 300000, { 'trailing': false })
- * jQuery(element).on('click', throttled)
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+ * jQuery(element).on('click', throttled);
  *
  * // Cancel the trailing throttled invocation.
- * jQuery(window).on('popstate', throttled.cancel)
+ * jQuery(window).on('popstate', throttled.cancel);
  */
 function throttle(func, wait, options) {
-  let leading = true
-  let trailing = true
+  var leading = true,
+      trailing = true;
 
   if (typeof func != 'function') {
-    throw new TypeError('Expected a function')
+    throw new TypeError(FUNC_ERROR_TEXT);
   }
   if (isObject(options)) {
-    leading = 'leading' in options ? !!options.leading : leading
-    trailing = 'trailing' in options ? !!options.trailing : trailing
+    leading = 'leading' in options ? !!options.leading : leading;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
   }
   return debounce(func, wait, {
     'leading': leading,
     'maxWait': wait,
     'trailing': trailing
-  })
+  });
 }
 
-export default throttle
+module.exports = throttle;

@@ -1,34 +1,39 @@
-import baseSlice from './.internal/baseSlice.js'
+var baseSlice = require('./_baseSlice'),
+    toInteger = require('./toInteger');
 
 /**
  * Creates a slice of `array` with `n` elements taken from the end.
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to take.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * takeRight([1, 2, 3])
+ * _.takeRight([1, 2, 3]);
  * // => [3]
  *
- * takeRight([1, 2, 3], 2)
+ * _.takeRight([1, 2, 3], 2);
  * // => [2, 3]
  *
- * takeRight([1, 2, 3], 5)
+ * _.takeRight([1, 2, 3], 5);
  * // => [1, 2, 3]
  *
- * takeRight([1, 2, 3], 0)
+ * _.takeRight([1, 2, 3], 0);
  * // => []
  */
-function takeRight(array, n=1) {
-  const length = array == null ? 0 : array.length
+function takeRight(array, n, guard) {
+  var length = array == null ? 0 : array.length;
   if (!length) {
-    return []
+    return [];
   }
-  n = length - n
-  return baseSlice(array, n < 0 ? 0 : n, length)
+  n = (guard || n === undefined) ? 1 : toInteger(n);
+  n = length - n;
+  return baseSlice(array, n < 0 ? 0 : n, length);
 }
 
-export default takeRight
+module.exports = takeRight;

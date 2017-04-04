@@ -1,21 +1,22 @@
-import baseFlatten from './.internal/baseFlatten.js'
+var baseFlatten = require('./_baseFlatten');
 
 /**
  * Flattens `array` a single level deep.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to flatten.
  * @returns {Array} Returns the new flattened array.
- * @see flatMap, flatMapDeep, flatMapDepth, flattenDeep, flattenDepth
  * @example
  *
- * flatten([1, [2, [3, [4]], 5]])
+ * _.flatten([1, [2, [3, [4]], 5]]);
  * // => [1, 2, [3, [4]], 5]
  */
 function flatten(array) {
-  const length = array == null ? 0 : array.length
-  return length ? baseFlatten(array, 1) : []
+  var length = array == null ? 0 : array.length;
+  return length ? baseFlatten(array, 1) : [];
 }
 
-export default flatten
+module.exports = flatten;

@@ -1,22 +1,23 @@
-import deburrLetter from './.internal/deburrLetter.js'
+var deburrLetter = require('./_deburrLetter'),
+    toString = require('./toString');
 
 /** Used to match Latin Unicode letters (excluding mathematical operators). */
-const reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g
+var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 
 /** Used to compose unicode character classes. */
-const rsComboMarksRange = '\\u0300-\\u036f'
-const reComboHalfMarksRange = '\\ufe20-\\ufe2f'
-const rsComboSymbolsRange = '\\u20d0-\\u20ff'
-const rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange
+var rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange;
 
 /** Used to compose unicode capture groups. */
-const rsCombo = `[${ rsComboRange }]`
+var rsCombo = '[' + rsComboRange + ']';
 
 /**
  * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
  * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
  */
-const reComboMark = RegExp(rsCombo, 'g')
+var reComboMark = RegExp(rsCombo, 'g');
 
 /**
  * Deburrs `string` by converting
@@ -25,17 +26,20 @@ const reComboMark = RegExp(rsCombo, 'g')
  * letters to basic Latin letters and removing
  * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to deburr.
  * @returns {string} Returns the deburred string.
  * @example
  *
- * deburr('déjà vu')
+ * _.deburr('déjà vu');
  * // => 'deja vu'
  */
 function deburr(string) {
-  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '')
+  string = toString(string);
+  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
 }
 
-export default deburr
+module.exports = deburr;

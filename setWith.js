@@ -1,13 +1,15 @@
-import baseSet from './.internal/baseSet.js'
+var baseSet = require('./_baseSet');
 
 /**
- * This method is like `set` except that it accepts `customizer` which is
- * invoked to produce the objects of `path`. If `customizer` returns `undefined`
+ * This method is like `_.set` except that it accepts `customizer` which is
+ * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
  * path creation is handled by the method instead. The `customizer` is invoked
  * with three arguments: (nsValue, key, nsObject).
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -17,14 +19,14 @@ import baseSet from './.internal/baseSet.js'
  * @returns {Object} Returns `object`.
  * @example
  *
- * const object = {}
+ * var object = {};
  *
- * setWith(object, '[0][1]', 'a', Object)
+ * _.setWith(object, '[0][1]', 'a', Object);
  * // => { '0': { '1': 'a' } }
  */
 function setWith(object, path, value, customizer) {
-  customizer = typeof customizer == 'function' ? customizer : undefined
-  return object == null ? object : baseSet(object, path, value, customizer)
+  customizer = typeof customizer == 'function' ? customizer : undefined;
+  return object == null ? object : baseSet(object, path, value, customizer);
 }
 
-export default setWith
+module.exports = setWith;

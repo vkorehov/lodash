@@ -1,24 +1,27 @@
-import createWrap from './.internal/createWrap.js'
-import getHolder from './.internal/getHolder.js'
-import replaceHolders from './.internal/replaceHolders.js'
+var baseRest = require('./_baseRest'),
+    createWrap = require('./_createWrap'),
+    getHolder = require('./_getHolder'),
+    replaceHolders = require('./_replaceHolders');
 
 /** Used to compose bitmasks for function metadata. */
-const WRAP_BIND_FLAG = 1
-const WRAP_BIND_KEY_FLAG = 2
-const WRAP_PARTIAL_FLAG = 32
+var WRAP_BIND_FLAG = 1,
+    WRAP_BIND_KEY_FLAG = 2,
+    WRAP_PARTIAL_FLAG = 32;
 
 /**
  * Creates a function that invokes the method at `object[key]` with `partials`
  * prepended to the arguments it receives.
  *
- * This method differs from `bind` by allowing bound functions to reference
+ * This method differs from `_.bind` by allowing bound functions to reference
  * methods that may be redefined or don't yet exist. See
  * [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern)
  * for more details.
  *
- * The `bindKey.placeholder` value, which defaults to `_` in monolithic
+ * The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
  * builds, may be used as a placeholder for partially applied arguments.
  *
+ * @static
+ * @memberOf _
  * @since 0.10.0
  * @category Function
  * @param {Object} object The object to invoke the method on.
@@ -27,40 +30,39 @@ const WRAP_PARTIAL_FLAG = 32
  * @returns {Function} Returns the new bound function.
  * @example
  *
- * const object = {
+ * var object = {
  *   'user': 'fred',
  *   'greet': function(greeting, punctuation) {
- *     return greeting + ' ' + this.user + punctuation
+ *     return greeting + ' ' + this.user + punctuation;
  *   }
- * }
+ * };
  *
- * const bound = bindKey(object, 'greet', 'hi')
- * bound('!')
+ * var bound = _.bindKey(object, 'greet', 'hi');
+ * bound('!');
  * // => 'hi fred!'
  *
  * object.greet = function(greeting, punctuation) {
- *   return greeting + 'ya ' + this.user + punctuation
- * }
+ *   return greeting + 'ya ' + this.user + punctuation;
+ * };
  *
- * bound('!')
+ * bound('!');
  * // => 'hiya fred!'
  *
  * // Bound with placeholders.
- * const bound = bindKey(object, 'greet', _, '!')
- * bound('hi')
+ * var bound = _.bindKey(object, 'greet', _, '!');
+ * bound('hi');
  * // => 'hiya fred!'
  */
-function bindKey(object, key, ...partials) {
-  let holders
-  let bitmask = WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG
+var bindKey = baseRest(function(object, key, partials) {
+  var bitmask = WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG;
   if (partials.length) {
-    holders = replaceHolders(partials, getHolder(bindKey))
-    bitmask |= WRAP_PARTIAL_FLAG
+    var holders = replaceHolders(partials, getHolder(bindKey));
+    bitmask |= WRAP_PARTIAL_FLAG;
   }
-  return createWrap(key, bitmask, object, partials, holders)
-}
+  return createWrap(key, bitmask, object, partials, holders);
+});
 
 // Assign default placeholders.
-bindKey.placeholder = {}
+bindKey.placeholder = {};
 
-export default bindKey
+module.exports = bindKey;

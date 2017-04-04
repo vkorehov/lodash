@@ -1,23 +1,25 @@
 /**
  * Checks if `value` is `null` or `undefined`.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
  * @example
  *
- * isNil(null)
+ * _.isNil(null);
  * // => true
  *
- * isNil(void 0)
+ * _.isNil(void 0);
  * // => true
  *
- * isNil(NaN)
+ * _.isNil(NaN);
  * // => false
  */
 function isNil(value) {
-  return value == null
+  return value == null;
 }
 
-export default isNil
+module.exports = isNil;

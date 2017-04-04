@@ -1,27 +1,27 @@
-import baseGetTag from './.internal/baseGetTag.js'
-import isObjectLike from './isObjectLike.js'
-import nodeUtil from './.internal/nodeUtil.js'
+var baseIsRegExp = require('./_baseIsRegExp'),
+    baseUnary = require('./_baseUnary'),
+    nodeUtil = require('./_nodeUtil');
 
 /* Node.js helper references. */
-const nodeIsRegExp = nodeUtil && nodeUtil.isRegExp
+var nodeIsRegExp = nodeUtil && nodeUtil.isRegExp;
 
 /**
  * Checks if `value` is classified as a `RegExp` object.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.
  * @example
  *
- * isRegExp(/abc/)
+ * _.isRegExp(/abc/);
  * // => true
  *
- * isRegExp('/abc/')
+ * _.isRegExp('/abc/');
  * // => false
  */
-const isRegExp = nodeIsRegExp
-  ? (value) => nodeIsRegExp(value)
-  : (value) => isObjectLike(value) && baseGetTag(value) == '[object RegExp]'
+var isRegExp = nodeIsRegExp ? baseUnary(nodeIsRegExp) : baseIsRegExp;
 
-export default isRegExp
+module.exports = isRegExp;

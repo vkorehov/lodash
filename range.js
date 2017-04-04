@@ -1,4 +1,4 @@
-import createRange from './.internal/createRange.js'
+var createRange = require('./_createRange');
 
 /**
  * Creates an array of numbers (positive and/or negative) progressing from
@@ -9,36 +9,38 @@ import createRange from './.internal/createRange.js'
  * **Note:** JavaScript follows the IEEE-754 standard for resolving
  * floating-point values which can produce unexpected results.
  *
+ * @static
  * @since 0.1.0
+ * @memberOf _
  * @category Util
  * @param {number} [start=0] The start of the range.
  * @param {number} end The end of the range.
  * @param {number} [step=1] The value to increment or decrement by.
  * @returns {Array} Returns the range of numbers.
- * @see inRange, rangeRight
+ * @see _.inRange, _.rangeRight
  * @example
  *
- * range(4)
+ * _.range(4);
  * // => [0, 1, 2, 3]
  *
- * range(-4)
+ * _.range(-4);
  * // => [0, -1, -2, -3]
  *
- * range(1, 5)
+ * _.range(1, 5);
  * // => [1, 2, 3, 4]
  *
- * range(0, 20, 5)
+ * _.range(0, 20, 5);
  * // => [0, 5, 10, 15]
  *
- * range(0, -4, -1)
+ * _.range(0, -4, -1);
  * // => [0, -1, -2, -3]
  *
- * range(1, 4, 0)
+ * _.range(1, 4, 0);
  * // => [1, 1, 1]
  *
- * range(0)
+ * _.range(0);
  * // => []
  */
-const range = createRange()
+var range = createRange();
 
-export default range
+module.exports = range;

@@ -1,38 +1,43 @@
-import arrayMap from './.internal/arrayMap.js'
-import baseAt from './.internal/baseAt.js'
-import basePullAt from './.internal/basePullAt.js'
-import compareAscending from './.internal/compareAscending.js'
-import isIndex from './.internal/isIndex.js'
+var arrayMap = require('./_arrayMap'),
+    baseAt = require('./_baseAt'),
+    basePullAt = require('./_basePullAt'),
+    compareAscending = require('./_compareAscending'),
+    flatRest = require('./_flatRest'),
+    isIndex = require('./_isIndex');
 
 /**
  * Removes elements from `array` corresponding to `indexes` and returns an
  * array of removed elements.
  *
- * **Note:** Unlike `at`, this method mutates `array`.
+ * **Note:** Unlike `_.at`, this method mutates `array`.
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to modify.
  * @param {...(number|number[])} [indexes] The indexes of elements to remove.
  * @returns {Array} Returns the new array of removed elements.
- * @see pull, pullAll, pullAllBy, pullAllWith, remove, reject
  * @example
  *
- * const array = ['a', 'b', 'c', 'd']
- * const pulled = pullAt(array, [1, 3])
+ * var array = ['a', 'b', 'c', 'd'];
+ * var pulled = _.pullAt(array, [1, 3]);
  *
- * console.log(array)
+ * console.log(array);
  * // => ['a', 'c']
  *
- * console.log(pulled)
+ * console.log(pulled);
  * // => ['b', 'd']
  */
-function pullAt(array, ...indexes) {
-  const length = array == null ? 0 : array.length
-  const result = baseAt(array, indexes)
+var pullAt = flatRest(function(array, indexes) {
+  var length = array == null ? 0 : array.length,
+      result = baseAt(array, indexes);
 
-  basePullAt(array, arrayMap(indexes, (index) => isIndex(index, length) ? +index : index).sort(compareAscending))
-  return result
-}
+  basePullAt(array, arrayMap(indexes, function(index) {
+    return isIndex(index, length) ? +index : index;
+  }).sort(compareAscending));
 
-export default pullAt
+  return result;
+});
+
+module.exports = pullAt;

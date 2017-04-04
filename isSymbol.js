@@ -1,23 +1,29 @@
-import getTag from './.internal/getTag.js'
+var baseGetTag = require('./_baseGetTag'),
+    isObjectLike = require('./isObjectLike');
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
 
 /**
  * Checks if `value` is classified as a `Symbol` primitive or object.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
  * @example
  *
- * isSymbol(Symbol.iterator)
+ * _.isSymbol(Symbol.iterator);
  * // => true
  *
- * isSymbol('abc')
+ * _.isSymbol('abc');
  * // => false
  */
 function isSymbol(value) {
-  const type = typeof value
-  return type == 'symbol' || (type == 'object' && value != null && getTag(value) == '[object Symbol]')
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
 }
 
-export default isSymbol
+module.exports = isSymbol;

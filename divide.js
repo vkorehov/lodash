@@ -1,8 +1,10 @@
-import createMathOperation from './.internal/createMathOperation.js'
+var createMathOperation = require('./_createMathOperation');
 
 /**
  * Divide two numbers.
  *
+ * @static
+ * @memberOf _
  * @since 4.7.0
  * @category Math
  * @param {number} dividend The first number in a division.
@@ -10,9 +12,11 @@ import createMathOperation from './.internal/createMathOperation.js'
  * @returns {number} Returns the quotient.
  * @example
  *
- * divide(6, 4)
+ * _.divide(6, 4);
  * // => 1.5
  */
-const divide = createMathOperation((dividend, divisor) => dividend / divisor, 1)
+var divide = createMathOperation(function(dividend, divisor) {
+  return dividend / divisor;
+}, 1);
 
-export default divide
+module.exports = divide;

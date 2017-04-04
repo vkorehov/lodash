@@ -1,4 +1,6 @@
-import baseAssignValue from './.internal/baseAssignValue.js'
+var baseAssignValue = require('./_baseAssignValue'),
+    baseForOwn = require('./_baseForOwn'),
+    baseIteratee = require('./_baseIteratee');
 
 /**
  * Creates an object with the same keys as `object` and values generated
@@ -6,28 +8,36 @@ import baseAssignValue from './.internal/baseAssignValue.js'
  * `iteratee`. The iteratee is invoked with three arguments:
  * (value, key, object).
  *
+ * @static
+ * @memberOf _
  * @since 2.4.0
  * @category Object
  * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns the new mapped object.
- * @see mapKeys
+ * @see _.mapKeys
  * @example
  *
- * const users = {
+ * var users = {
  *   'fred':    { 'user': 'fred',    'age': 40 },
  *   'pebbles': { 'user': 'pebbles', 'age': 1 }
- * }
+ * };
  *
- * mapValues(users, ({ age }) => age)
+ * _.mapValues(users, function(o) { return o.age; });
+ * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.mapValues(users, 'age');
  * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValues(object, iteratee) {
-  const result = {}
-  Object.keys(object).forEach((value, key, object) => {
-    baseAssignValue(result, key, iteratee(value, key, object))
-  })
-  return result
+  var result = {};
+  iteratee = baseIteratee(iteratee, 3);
+
+  baseForOwn(object, function(value, key, object) {
+    baseAssignValue(result, key, iteratee(value, key, object));
+  });
+  return result;
 }
 
-export default mapValues
+module.exports = mapValues;

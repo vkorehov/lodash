@@ -1,29 +1,36 @@
-import arrayReduceRight from './.internal/arrayReduceRight.js'
-import baseEachRight from './.internal/baseEachRight.js'
-import baseReduce from './.internal/baseReduce.js'
+var arrayReduceRight = require('./_arrayReduceRight'),
+    baseEachRight = require('./_baseEachRight'),
+    baseIteratee = require('./_baseIteratee'),
+    baseReduce = require('./_baseReduce'),
+    isArray = require('./isArray');
 
 /**
- * This method is like `reduce` except that it iterates over elements of
+ * This method is like `_.reduce` except that it iterates over elements of
  * `collection` from right to left.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
  * @returns {*} Returns the accumulated value.
- * @see reduce
+ * @see _.reduce
  * @example
  *
- * const array = [[0, 1], [2, 3], [4, 5]]
+ * var array = [[0, 1], [2, 3], [4, 5]];
  *
- * reduceRight(array, (flattened, other) => flattened.concat(other), [])
+ * _.reduceRight(array, function(flattened, other) {
+ *   return flattened.concat(other);
+ * }, []);
  * // => [4, 5, 2, 3, 0, 1]
  */
 function reduceRight(collection, iteratee, accumulator) {
-  const func = Array.isArray(collection) ? arrayReduceRight : baseReduce
-  const initAccum = arguments.length < 3
-  return func(collection, iteratee, accumulator, initAccum, baseEachRight)
+  var func = isArray(collection) ? arrayReduceRight : baseReduce,
+      initAccum = arguments.length < 3;
+
+  return func(collection, baseIteratee(iteratee, 4), accumulator, initAccum, baseEachRight);
 }
 
-export default reduceRight
+module.exports = reduceRight;

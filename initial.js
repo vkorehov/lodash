@@ -1,20 +1,22 @@
-import baseSlice from './.internal/baseSlice.js'
+var baseSlice = require('./_baseSlice');
 
 /**
  * Gets all but the last element of `array`.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to query.
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * initial([1, 2, 3])
+ * _.initial([1, 2, 3]);
  * // => [1, 2]
  */
 function initial(array) {
-  const length = array == null ? 0 : array.length
-  return length ? baseSlice(array, 0, -1) : []
+  var length = array == null ? 0 : array.length;
+  return length ? baseSlice(array, 0, -1) : [];
 }
 
-export default initial
+module.exports = initial;

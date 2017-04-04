@@ -1,30 +1,29 @@
+var baseLt = require('./_baseLt'),
+    createRelationalOperation = require('./_createRelationalOperation');
+
 /**
  * Checks if `value` is less than `other`.
  *
+ * @static
+ * @memberOf _
  * @since 3.9.0
  * @category Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if `value` is less than `other`,
  *  else `false`.
- * @see gt, gte, lte
+ * @see _.gt
  * @example
  *
- * lt(1, 3)
+ * _.lt(1, 3);
  * // => true
  *
- * lt(3, 3)
+ * _.lt(3, 3);
  * // => false
  *
- * lt(3, 1)
+ * _.lt(3, 1);
  * // => false
  */
-function lt(value, other) {
-  if (!(typeof value == 'string' && typeof other == 'string')) {
-    value = +value
-    other = +other
-  }
-  return value < other
-}
+var lt = createRelationalOperation(baseLt);
 
-export default lt
+module.exports = lt;

@@ -1,5 +1,7 @@
-import arrayMap from './.internal/arrayMap.js'
-import baseMap from './.internal/baseMap.js'
+var arrayMap = require('./_arrayMap'),
+    baseIteratee = require('./_baseIteratee'),
+    baseMap = require('./_baseMap'),
+    isArray = require('./isArray');
 
 /**
  * Creates an array of values by running each element in `collection` thru
@@ -7,7 +9,7 @@ import baseMap from './.internal/baseMap.js'
  * (value, index|key, collection).
  *
  * Many lodash methods are guarded to work as iteratees for methods like
- * `every`, `filter`, `map`, `mapValues`, `reject`, and `some`.
+ * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
  *
  * The guarded methods are:
  * `ary`, `chunk`, `curry`, `curryRight`, `drop`, `dropRight`, `every`,
@@ -15,26 +17,37 @@ import baseMap from './.internal/baseMap.js'
  * `sampleSize`, `slice`, `some`, `sortBy`, `split`, `take`, `takeRight`,
  * `template`, `trim`, `trimEnd`, `trimStart`, and `words`
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new mapped array.
  * @example
  *
  * function square(n) {
- *   return n * n
+ *   return n * n;
  * }
  *
- * map([4, 8], square)
+ * _.map([4, 8], square);
  * // => [16, 64]
  *
- * map({ 'a': 4, 'b': 8 }, square)
+ * _.map({ 'a': 4, 'b': 8 }, square);
  * // => [16, 64] (iteration order is not guaranteed)
+ *
+ * var users = [
+ *   { 'user': 'barney' },
+ *   { 'user': 'fred' }
+ * ];
+ *
+ * // The `_.property` iteratee shorthand.
+ * _.map(users, 'user');
+ * // => ['barney', 'fred']
  */
 function map(collection, iteratee) {
-  const func = Array.isArray(collection) ? arrayMap : baseMap
-  return func(collection, iteratee)
+  var func = isArray(collection) ? arrayMap : baseMap;
+  return func(collection, baseIteratee(iteratee, 3));
 }
 
-export default map
+module.exports = map;

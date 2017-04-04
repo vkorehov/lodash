@@ -1,10 +1,12 @@
-import isArrayLike from './isArrayLike.js'
-import isObjectLike from './isObjectLike.js'
+var isArrayLike = require('./isArrayLike'),
+    isObjectLike = require('./isObjectLike');
 
 /**
- * This method is like `isArrayLike` except that it also checks if `value`
+ * This method is like `_.isArrayLike` except that it also checks if `value`
  * is an object.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
@@ -12,20 +14,20 @@ import isObjectLike from './isObjectLike.js'
  *  else `false`.
  * @example
  *
- * isArrayLikeObject([1, 2, 3])
+ * _.isArrayLikeObject([1, 2, 3]);
  * // => true
  *
- * isArrayLikeObject(document.body.children)
+ * _.isArrayLikeObject(document.body.children);
  * // => true
  *
- * isArrayLikeObject('abc')
+ * _.isArrayLikeObject('abc');
  * // => false
  *
- * isArrayLikeObject(Function)
+ * _.isArrayLikeObject(_.noop);
  * // => false
  */
 function isArrayLikeObject(value) {
-  return isObjectLike(value) && isArrayLike(value)
+  return isObjectLike(value) && isArrayLike(value);
 }
 
-export default isArrayLikeObject
+module.exports = isArrayLikeObject;

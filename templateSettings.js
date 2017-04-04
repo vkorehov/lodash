@@ -1,21 +1,23 @@
-import escape from './escape.js'
-import reEscape from './.internal/reEscape.js'
-import reEvaluate from './.internal/reEvaluate.js'
-import reInterpolate from './.internal/reInterpolate.js'
+var escape = require('./escape'),
+    reEscape = require('./_reEscape'),
+    reEvaluate = require('./_reEvaluate'),
+    reInterpolate = require('./_reInterpolate');
 
 /**
  * By default, the template delimiters used by lodash are like those in
  * embedded Ruby (ERB) as well as ES2015 template strings. Change the
  * following template settings to use alternative delimiters.
  *
+ * @static
+ * @memberOf _
  * @type {Object}
  */
-const templateSettings = {
+var templateSettings = {
 
   /**
    * Used to detect `data` property values to be HTML-escaped.
    *
-   * @memberOf templateSettings
+   * @memberOf _.templateSettings
    * @type {RegExp}
    */
   'escape': reEscape,
@@ -23,7 +25,7 @@ const templateSettings = {
   /**
    * Used to detect code to be evaluated.
    *
-   * @memberOf templateSettings
+   * @memberOf _.templateSettings
    * @type {RegExp}
    */
   'evaluate': reEvaluate,
@@ -31,7 +33,7 @@ const templateSettings = {
   /**
    * Used to detect `data` property values to inject.
    *
-   * @memberOf templateSettings
+   * @memberOf _.templateSettings
    * @type {RegExp}
    */
   'interpolate': reInterpolate,
@@ -39,7 +41,7 @@ const templateSettings = {
   /**
    * Used to reference the data object in the template text.
    *
-   * @memberOf templateSettings
+   * @memberOf _.templateSettings
    * @type {string}
    */
   'variable': '',
@@ -47,7 +49,7 @@ const templateSettings = {
   /**
    * Used to import variables into the compiled template.
    *
-   * @memberOf templateSettings
+   * @memberOf _.templateSettings
    * @type {Object}
    */
   'imports': {
@@ -55,11 +57,11 @@ const templateSettings = {
     /**
      * A reference to the `lodash` function.
      *
-     * @memberOf templateSettings.imports
+     * @memberOf _.templateSettings.imports
      * @type {Function}
      */
     '_': { 'escape': escape }
   }
-}
+};
 
-export default templateSettings
+module.exports = templateSettings;
