@@ -17048,6 +17048,7 @@
     if (symIterator) {
       lodash.prototype[symIterator] = wrapperToIterator;
     }
+	lodash.default = lodash;
     return lodash;
   });
 
