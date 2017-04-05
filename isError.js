@@ -32,5 +32,5 @@ function isError(value) {
   return tag == errorTag || tag == domExcTag ||
     (typeof value.message == 'string' && typeof value.name == 'string' && !isPlainObject(value));
 }
-
+isError.default = isError;
 module.exports = isError;

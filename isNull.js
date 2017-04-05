@@ -18,5 +18,5 @@
 function isNull(value) {
   return value === null;
 }
-
+isNull.default = isNull;
 module.exports = isNull;

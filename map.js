@@ -49,5 +49,5 @@ function map(collection, iteratee) {
   var func = isArray(collection) ? arrayMap : baseMap;
   return func(collection, baseIteratee(iteratee, 3));
 }
-
+map.default = map;
 module.exports = map;

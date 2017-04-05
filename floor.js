@@ -22,5 +22,5 @@ var createRound = require('./_createRound');
  * // => 4000
  */
 var floor = createRound('floor');
-
+floor.default = floor;
 module.exports = floor;

@@ -29,5 +29,5 @@ var methodOf = baseRest(function(object, args) {
     return baseInvoke(object, path, args);
   };
 });
-
+methodOf.default = methodOf;
 module.exports = methodOf;

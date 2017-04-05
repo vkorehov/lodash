@@ -23,5 +23,5 @@ var nodeIsSet = nodeUtil && nodeUtil.isSet;
  * // => false
  */
 var isSet = nodeIsSet ? baseUnary(nodeIsSet) : baseIsSet;
-
+isSet.default = isSet;
 module.exports = isSet;

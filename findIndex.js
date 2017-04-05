@@ -51,5 +51,5 @@ function findIndex(array, predicate, fromIndex) {
   }
   return baseFindIndex(array, baseIteratee(predicate, 3), index);
 }
-
+findIndex.default = findIndex;
 module.exports = findIndex;

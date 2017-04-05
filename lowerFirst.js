@@ -18,5 +18,5 @@ var createCaseFirst = require('./_createCaseFirst');
  * // => 'fRED'
  */
 var lowerFirst = createCaseFirst('toLowerCase');
-
+lowerFirst.default = lowerFirst;
 module.exports = lowerFirst;

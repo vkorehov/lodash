@@ -19,5 +19,5 @@ var baseSet = require('./_baseSet'),
 function zipObjectDeep(props, values) {
   return baseZipObject(props || [], values || [], baseSet);
 }
-
+zipObjectDeep.default = zipObjectDeep;
 module.exports = zipObjectDeep;

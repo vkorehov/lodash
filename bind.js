@@ -53,5 +53,5 @@ var bind = baseRest(function(func, thisArg, partials) {
 
 // Assign default placeholders.
 bind.placeholder = {};
-
+bind.default = bind;
 module.exports = bind;

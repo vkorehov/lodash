@@ -40,5 +40,5 @@ function wrapperReverse() {
   }
   return this.thru(reverse);
 }
-
+wrapperReverse.default = wrapperReverse;
 module.exports = wrapperReverse;

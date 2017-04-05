@@ -107,5 +107,5 @@ function truncate(string, options) {
   }
   return result + omission;
 }
-
+truncate.default = truncate;
 module.exports = truncate;

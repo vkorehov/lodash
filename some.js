@@ -47,5 +47,5 @@ function some(collection, predicate, guard) {
   }
   return func(collection, baseIteratee(predicate, 3));
 }
-
+some.default = some;
 module.exports = some;

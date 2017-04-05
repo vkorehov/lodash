@@ -32,5 +32,5 @@ var baseIsMatch = require('./_baseIsMatch'),
 function isMatch(object, source) {
   return object === source || baseIsMatch(object, source, getMatchData(source));
 }
-
+isMatch.default = isMatch;
 module.exports = isMatch;

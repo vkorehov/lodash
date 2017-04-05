@@ -47,5 +47,5 @@ function times(n, iteratee) {
   }
   return result;
 }
-
+times.default = times;
 module.exports = times;

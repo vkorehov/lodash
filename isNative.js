@@ -36,5 +36,5 @@ function isNative(value) {
   }
   return baseIsNative(value);
 }
-
+isNative.default = isNative;
 module.exports = isNative;

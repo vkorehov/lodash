@@ -26,5 +26,5 @@ var defaultsDeep = baseRest(function(args) {
   args.push(undefined, customDefaultsMerge);
   return apply(mergeWith, undefined, args);
 });
-
+defaultsDeep.default = defaultsDeep;
 module.exports = defaultsDeep;

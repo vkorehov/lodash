@@ -32,5 +32,5 @@ function reduceRight(collection, iteratee, accumulator) {
 
   return func(collection, baseIteratee(iteratee, 4), accumulator, initAccum, baseEachRight);
 }
-
+reduceRight.default = reduceRight;
 module.exports = reduceRight;

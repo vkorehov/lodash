@@ -30,5 +30,5 @@ var unionWith = baseRest(function(arrays) {
   comparator = typeof comparator == 'function' ? comparator : undefined;
   return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), undefined, comparator);
 });
-
+unionWith.default = unionWith;
 module.exports = unionWith;

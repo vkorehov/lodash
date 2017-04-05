@@ -32,5 +32,5 @@ var nativeIsFinite = root.isFinite;
 function isFinite(value) {
   return typeof value == 'number' && nativeIsFinite(value);
 }
-
+isFinite.default = isFinite;
 module.exports = isFinite;

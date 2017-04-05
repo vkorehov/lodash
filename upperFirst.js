@@ -18,5 +18,5 @@ var createCaseFirst = require('./_createCaseFirst');
  * // => 'FRED'
  */
 var upperFirst = createCaseFirst('toUpperCase');
-
+upperFirst.default = upperFirst;
 module.exports = upperFirst;

@@ -30,5 +30,5 @@ var method = baseRest(function(path, args) {
     return baseInvoke(object, path, args);
   };
 });
-
+method.default = method;
 module.exports = method;

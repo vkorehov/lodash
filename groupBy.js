@@ -37,5 +37,5 @@ var groupBy = createAggregator(function(result, value, key) {
     baseAssignValue(result, key, [value]);
   }
 });
-
+groupBy.default = groupBy;
 module.exports = groupBy;

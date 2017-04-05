@@ -18,5 +18,5 @@ var createMathOperation = require('./_createMathOperation');
 var divide = createMathOperation(function(dividend, divisor) {
   return dividend / divisor;
 }, 1);
-
+divide.default = divide;
 module.exports = divide;

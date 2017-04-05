@@ -33,5 +33,5 @@ function toSafeInteger(value) {
     ? baseClamp(toInteger(value), -MAX_SAFE_INTEGER, MAX_SAFE_INTEGER)
     : (value === 0 ? value : 0);
 }
-
+toSafeInteger.default = toSafeInteger;
 module.exports = toSafeInteger;

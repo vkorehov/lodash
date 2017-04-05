@@ -30,5 +30,5 @@ function unescape(string) {
     ? string.replace(reEscapedHtml, unescapeHtmlChar)
     : string;
 }
-
+unescape.default = unescape;
 module.exports = unescape;

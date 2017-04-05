@@ -30,5 +30,5 @@ var baseForOwnRight = require('./_baseForOwnRight'),
 function forOwnRight(object, iteratee) {
   return object && baseForOwnRight(object, castFunction(iteratee));
 }
-
+forOwnRight.default = forOwnRight;
 module.exports = forOwnRight;

@@ -42,5 +42,5 @@ var createRange = require('./_createRange');
  * // => []
  */
 var range = createRange();
-
+range.default = range;
 module.exports = range;

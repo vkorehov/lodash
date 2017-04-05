@@ -30,5 +30,5 @@ var nativeReverse = arrayProto.reverse;
 function reverse(array) {
   return array == null ? array : nativeReverse.call(array);
 }
-
+reverse.default = reverse;
 module.exports = reverse;

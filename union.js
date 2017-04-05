@@ -22,5 +22,5 @@ var baseFlatten = require('./_baseFlatten'),
 var union = baseRest(function(arrays) {
   return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true));
 });
-
+union.default = union;
 module.exports = union;

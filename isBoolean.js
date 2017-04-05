@@ -25,5 +25,5 @@ function isBoolean(value) {
   return value === true || value === false ||
     (isObjectLike(value) && baseGetTag(value) == boolTag);
 }
-
+isBoolean.default = isBoolean;
 module.exports = isBoolean;

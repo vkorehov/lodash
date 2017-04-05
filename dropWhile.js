@@ -41,5 +41,5 @@ function dropWhile(array, predicate) {
     ? baseWhile(array, baseIteratee(predicate, 3), true)
     : [];
 }
-
+dropWhile.default = dropWhile;
 module.exports = dropWhile;

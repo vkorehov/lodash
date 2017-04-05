@@ -24,5 +24,5 @@ var weakMapTag = '[object WeakMap]';
 function isWeakMap(value) {
   return isObjectLike(value) && getTag(value) == weakMapTag;
 }
-
+isWeakMap.default = isWeakMap;
 module.exports = isWeakMap;

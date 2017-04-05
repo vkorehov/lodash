@@ -33,5 +33,5 @@ function take(array, n, guard) {
   n = (guard || n === undefined) ? 1 : toInteger(n);
   return baseSlice(array, 0, n < 0 ? 0 : n);
 }
-
+take.default = take;
 module.exports = take;

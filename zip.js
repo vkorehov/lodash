@@ -18,5 +18,5 @@ var baseRest = require('./_baseRest'),
  * // => [['a', 1, true], ['b', 2, false]]
  */
 var zip = baseRest(unzip);
-
+zip.default = zip;
 module.exports = zip;

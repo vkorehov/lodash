@@ -25,5 +25,5 @@ function pullAll(array, values) {
     ? basePullAll(array, values)
     : array;
 }
-
+pullAll.default = pullAll;
 module.exports = pullAll;

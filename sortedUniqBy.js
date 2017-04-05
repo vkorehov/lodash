@@ -22,5 +22,5 @@ function sortedUniqBy(array, iteratee) {
     ? baseSortedUniq(array, baseIteratee(iteratee, 2))
     : [];
 }
-
+sortedUniqBy.default = sortedUniqBy;
 module.exports = sortedUniqBy;

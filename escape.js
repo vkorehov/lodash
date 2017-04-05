@@ -39,5 +39,5 @@ function escape(string) {
     ? string.replace(reUnescapedHtml, escapeHtmlChar)
     : string;
 }
-
+escape.default = escape;
 module.exports = escape;

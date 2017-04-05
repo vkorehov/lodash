@@ -25,5 +25,5 @@
 function isObjectLike(value) {
   return value != null && typeof value == 'object';
 }
-
+isObjectLike.default = isObjectLike;
 module.exports = isObjectLike;

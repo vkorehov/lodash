@@ -34,5 +34,5 @@ var MAX_ARRAY_LENGTH = 4294967295;
 function toLength(value) {
   return value ? baseClamp(toInteger(value), 0, MAX_ARRAY_LENGTH) : 0;
 }
-
+toLength.default = toLength;
 module.exports = toLength;

@@ -25,5 +25,5 @@ var baseFlatten = require('./_baseFlatten'),
 function flatMap(collection, iteratee) {
   return baseFlatten(map(collection, iteratee), 1);
 }
-
+flatMap.default = flatMap;
 module.exports = flatMap;

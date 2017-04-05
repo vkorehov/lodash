@@ -34,5 +34,5 @@ function isNaN(value) {
   // ActiveX objects in IE.
   return isNumber(value) && value != +value;
 }
-
+isNaN.default = isNaN;
 module.exports = isNaN;

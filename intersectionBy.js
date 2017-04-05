@@ -41,5 +41,5 @@ var intersectionBy = baseRest(function(arrays) {
     ? baseIntersection(mapped, baseIteratee(iteratee, 2))
     : [];
 });
-
+intersectionBy.default = intersectionBy;
 module.exports = intersectionBy;

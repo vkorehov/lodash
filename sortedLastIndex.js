@@ -21,5 +21,5 @@ var baseSortedIndex = require('./_baseSortedIndex');
 function sortedLastIndex(array, value) {
   return baseSortedIndex(array, value, true);
 }
-
+sortedLastIndex.default = sortedLastIndex;
 module.exports = sortedLastIndex;

@@ -30,5 +30,5 @@ function minBy(array, iteratee) {
     ? baseExtremum(array, baseIteratee(iteratee, 2), baseLt)
     : undefined;
 }
-
+minBy.default = minBy;
 module.exports = minBy;

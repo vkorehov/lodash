@@ -28,5 +28,5 @@ function pullAllWith(array, values, comparator) {
     ? basePullAll(array, values, undefined, comparator)
     : array;
 }
-
+pullAllWith.default = pullAllWith;
 module.exports = pullAllWith;

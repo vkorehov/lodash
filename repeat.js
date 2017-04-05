@@ -33,5 +33,5 @@ function repeat(string, n, guard) {
   }
   return baseRepeat(toString(string), n);
 }
-
+repeat.default = repeat;
 module.exports = repeat;

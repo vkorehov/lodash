@@ -52,5 +52,5 @@ function result(object, path, defaultValue) {
   }
   return object;
 }
-
+result.default = result;
 module.exports = result;

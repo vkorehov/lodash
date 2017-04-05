@@ -33,5 +33,5 @@ var arrayLikeKeys = require('./_arrayLikeKeys'),
 function keys(object) {
   return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
 }
-
+keys.default = keys;
 module.exports = keys;

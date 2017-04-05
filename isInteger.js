@@ -29,5 +29,5 @@ var toInteger = require('./toInteger');
 function isInteger(value) {
   return typeof value == 'number' && value == toInteger(value);
 }
-
+isInteger.default = isInteger;
 module.exports = isInteger;

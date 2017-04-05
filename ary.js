@@ -25,5 +25,5 @@ function ary(func, n, guard) {
   n = (func && n == null) ? func.length : n;
   return createWrap(func, WRAP_ARY_FLAG, undefined, undefined, undefined, undefined, n);
 }
-
+ary.default = ary;
 module.exports = ary;

@@ -26,5 +26,5 @@ function isString(value) {
   return typeof value == 'string' ||
     (!isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag);
 }
-
+isString.default = isString;
 module.exports = isString;

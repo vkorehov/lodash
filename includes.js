@@ -49,5 +49,5 @@ function includes(collection, value, fromIndex, guard) {
     ? (fromIndex <= length && collection.indexOf(value, fromIndex) > -1)
     : (!!length && baseIndexOf(collection, value, fromIndex) > -1);
 }
-
+includes.default = includes;
 module.exports = includes;

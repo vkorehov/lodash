@@ -29,5 +29,5 @@ var isArrayLike = require('./isArrayLike'),
 function isArrayLikeObject(value) {
   return isObjectLike(value) && isArrayLike(value);
 }
-
+isArrayLikeObject.default = isArrayLikeObject;
 module.exports = isArrayLikeObject;

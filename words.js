@@ -31,5 +31,5 @@ function words(string, pattern, guard) {
   }
   return string.match(pattern) || [];
 }
-
+words.default = words;
 module.exports = words;

@@ -54,5 +54,5 @@ function toArray(value) {
 
   return func(value);
 }
-
+toArray.default = toArray;
 module.exports = toArray;

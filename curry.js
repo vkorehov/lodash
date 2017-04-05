@@ -53,5 +53,5 @@ function curry(func, arity, guard) {
 
 // Assign default placeholders.
 curry.placeholder = {};
-
+curry.default = curry;
 module.exports = curry;

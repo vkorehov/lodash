@@ -26,5 +26,5 @@ var createToPairs = require('./_createToPairs'),
  * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
  */
 var toPairsIn = createToPairs(keysIn);
-
+toPairsIn.default = toPairsIn;
 module.exports = toPairsIn;

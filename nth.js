@@ -25,5 +25,5 @@ var baseNth = require('./_baseNth'),
 function nth(array, n) {
   return (array && array.length) ? baseNth(array, toInteger(n)) : undefined;
 }
-
+nth.default = nth;
 module.exports = nth;

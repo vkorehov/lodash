@@ -32,5 +32,5 @@ var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsAr
   return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
     !propertyIsEnumerable.call(value, 'callee');
 };
-
+isArguments.default = isArguments;
 module.exports = isArguments;

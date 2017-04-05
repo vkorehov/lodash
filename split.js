@@ -48,5 +48,5 @@ function split(string, separator, limit) {
   }
   return string.split(separator, limit);
 }
-
+split.default = split;
 module.exports = split;

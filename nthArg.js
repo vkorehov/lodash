@@ -28,5 +28,5 @@ function nthArg(n) {
     return baseNth(args, n);
   });
 }
-
+nthArg.default = nthArg;
 module.exports = nthArg;

@@ -29,5 +29,5 @@ var baseIteratee = require('./_baseIteratee'),
 function sortedLastIndexBy(array, value, iteratee) {
   return baseSortedIndexBy(array, value, baseIteratee(iteratee, 2), true);
 }
-
+sortedLastIndexBy.default = sortedLastIndexBy;
 module.exports = sortedLastIndexBy;

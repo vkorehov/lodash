@@ -25,5 +25,5 @@ var baseRest = require('./_baseRest'),
  * // => ['b', 'b']
  */
 var pull = baseRest(pullAll);
-
+pull.default = pull;
 module.exports = pull;

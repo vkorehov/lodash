@@ -37,5 +37,5 @@ function forEach(collection, iteratee) {
   var func = isArray(collection) ? arrayEach : baseEach;
   return func(collection, castFunction(iteratee));
 }
-
+forEach.default = forEach;
 module.exports = forEach;

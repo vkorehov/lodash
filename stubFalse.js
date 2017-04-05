@@ -14,5 +14,5 @@
 function stubFalse() {
   return false;
 }
-
+stubFalse.default = stubFalse;
 module.exports = stubFalse;

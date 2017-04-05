@@ -30,5 +30,5 @@ var xorWith = baseRest(function(arrays) {
   comparator = typeof comparator == 'function' ? comparator : undefined;
   return baseXor(arrayFilter(arrays, isArrayLikeObject), undefined, comparator);
 });
-
+xorWith.default = xorWith;
 module.exports = xorWith;

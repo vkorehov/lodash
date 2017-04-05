@@ -20,5 +20,5 @@ var baseInvoke = require('./_baseInvoke'),
  * // => [2, 3]
  */
 var invoke = baseRest(baseInvoke);
-
+invoke.default = invoke;
 module.exports = invoke;

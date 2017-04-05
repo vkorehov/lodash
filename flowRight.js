@@ -22,5 +22,5 @@ var createFlow = require('./_createFlow');
  * // => 9
  */
 var flowRight = createFlow(true);
-
+flowRight.default = flowRight;
 module.exports = flowRight;

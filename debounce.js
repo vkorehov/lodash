@@ -184,5 +184,5 @@ function debounce(func, wait, options) {
   debounced.flush = flush;
   return debounced;
 }
-
+debounce.default = debounce;
 module.exports = debounce;

@@ -23,5 +23,5 @@ var nodeIsDate = nodeUtil && nodeUtil.isDate;
  * // => false
  */
 var isDate = nodeIsDate ? baseUnary(nodeIsDate) : baseIsDate;
-
+isDate.default = isDate;
 module.exports = isDate;

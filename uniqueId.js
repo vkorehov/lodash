@@ -24,5 +24,5 @@ function uniqueId(prefix) {
   var id = ++idCounter;
   return toString(prefix) + id;
 }
-
+uniqueId.default = uniqueId;
 module.exports = uniqueId;

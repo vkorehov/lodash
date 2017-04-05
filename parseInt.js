@@ -39,5 +39,5 @@ function parseInt(string, radix, guard) {
   }
   return nativeParseInt(toString(string).replace(reTrimStart, ''), radix || 0);
 }
-
+parseInt.default = parseInt;
 module.exports = parseInt;

@@ -44,5 +44,5 @@ var sortBy = baseRest(function(collection, iteratees) {
   }
   return baseOrderBy(collection, baseFlatten(iteratees, 1), []);
 });
-
+sortBy.default = sortBy;
 module.exports = sortBy;

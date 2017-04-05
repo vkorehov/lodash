@@ -46,5 +46,5 @@ var partial = baseRest(function(func, partials) {
 
 // Assign default placeholders.
 partial.placeholder = {};
-
+partial.default = partial;
 module.exports = partial;

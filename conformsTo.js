@@ -28,5 +28,5 @@ var baseConformsTo = require('./_baseConformsTo'),
 function conformsTo(object, source) {
   return source == null || baseConformsTo(object, source, keys(source));
 }
-
+conformsTo.default = conformsTo;
 module.exports = conformsTo;

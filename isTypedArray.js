@@ -23,5 +23,5 @@ var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
  * // => false
  */
 var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
-
+isTypedArray.default = isTypedArray;
 module.exports = isTypedArray;

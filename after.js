@@ -38,5 +38,5 @@ function after(n, func) {
     }
   };
 }
-
+after.default = after;
 module.exports = after;

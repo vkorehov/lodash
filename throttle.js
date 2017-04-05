@@ -65,5 +65,5 @@ function throttle(func, wait, options) {
     'trailing': trailing
   });
 }
-
+throttle.default = throttle;
 module.exports = throttle;

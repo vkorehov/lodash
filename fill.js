@@ -41,5 +41,5 @@ function fill(array, value, start, end) {
   }
   return baseFill(array, value, start, end);
 }
-
+fill.default = fill;
 module.exports = fill;

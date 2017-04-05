@@ -39,5 +39,5 @@ function mapValues(object, iteratee) {
   });
   return result;
 }
-
+mapValues.default = mapValues;
 module.exports = mapValues;

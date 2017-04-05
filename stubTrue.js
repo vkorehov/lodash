@@ -14,5 +14,5 @@
 function stubTrue() {
   return true;
 }
-
+stubTrue.default = stubTrue;
 module.exports = stubTrue;

@@ -30,5 +30,5 @@ function maxBy(array, iteratee) {
     ? baseExtremum(array, baseIteratee(iteratee, 2), baseGt)
     : undefined;
 }
-
+maxBy.default = maxBy;
 module.exports = maxBy;

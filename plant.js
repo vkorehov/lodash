@@ -44,5 +44,5 @@ function wrapperPlant(value) {
   previous.__wrapped__ = value;
   return result;
 }
-
+wrapperPlant.default = wrapperPlant;
 module.exports = wrapperPlant;

@@ -18,5 +18,5 @@
 function isUndefined(value) {
   return value === undefined;
 }
-
+isUndefined.default = isUndefined;
 module.exports = isUndefined;

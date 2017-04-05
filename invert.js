@@ -23,5 +23,5 @@ var constant = require('./constant'),
 var invert = createInverter(function(result, value, key) {
   result[value] = key;
 }, constant(identity));
-
+invert.default = invert;
 module.exports = invert;

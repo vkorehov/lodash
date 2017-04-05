@@ -29,5 +29,5 @@ function pullAllBy(array, values, iteratee) {
     ? basePullAll(array, values, baseIteratee(iteratee, 2))
     : array;
 }
-
+pullAllBy.default = pullAllBy;
 module.exports = pullAllBy;

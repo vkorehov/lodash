@@ -21,5 +21,5 @@
 function isNil(value) {
   return value == null;
 }
-
+isNil.default = isNil;
 module.exports = isNil;

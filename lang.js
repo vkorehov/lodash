@@ -1,4 +1,4 @@
-module.exports = {
+var l = {
   'castArray': require('./castArray'),
   'clone': require('./clone'),
   'cloneDeep': require('./cloneDeep'),
@@ -56,3 +56,6 @@ module.exports = {
   'toSafeInteger': require('./toSafeInteger'),
   'toString': require('./toString')
 };
+l.default = l;
+module.exports = l;
+

@@ -39,5 +39,5 @@ function create(prototype, properties) {
   var result = baseCreate(prototype);
   return properties == null ? result : baseAssign(result, properties);
 }
-
+create.default = create;
 module.exports = create;

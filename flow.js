@@ -23,5 +23,5 @@ var createFlow = require('./_createFlow');
  * // => 9
  */
 var flow = createFlow();
-
+flow.default = flow;
 module.exports = flow;

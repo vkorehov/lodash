@@ -34,5 +34,5 @@ function drop(array, n, guard) {
   n = (guard || n === undefined) ? 1 : toInteger(n);
   return baseSlice(array, n < 0 ? 0 : n, length);
 }
-
+drop.default = drop;
 module.exports = drop;

@@ -42,5 +42,5 @@ function lastIndexOf(array, value, fromIndex) {
     ? strictLastIndexOf(array, value, index)
     : baseFindIndex(array, baseIsNaN, index, true);
 }
-
+lastIndexOf.default = lastIndexOf;
 module.exports = lastIndexOf;

@@ -29,5 +29,5 @@ var difference = baseRest(function(array, values) {
     ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
     : [];
 });
-
+difference.default = difference;
 module.exports = difference;

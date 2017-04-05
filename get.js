@@ -29,5 +29,5 @@ function get(object, path, defaultValue) {
   var result = object == null ? undefined : baseGet(object, path);
   return result === undefined ? defaultValue : result;
 }
-
+get.default = get;
 module.exports = get;

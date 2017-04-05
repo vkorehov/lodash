@@ -62,5 +62,5 @@ function toNumber(value) {
     ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
     : (reIsBadHex.test(value) ? NAN : +value);
 }
-
+toNumber.default = toNumber;
 module.exports = toNumber;

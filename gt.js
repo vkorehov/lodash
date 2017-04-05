@@ -25,5 +25,5 @@ var baseGt = require('./_baseGt'),
  * // => false
  */
 var gt = createRelationalOperation(baseGt);
-
+gt.default = gt;
 module.exports = gt;

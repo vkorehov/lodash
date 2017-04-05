@@ -1,4 +1,4 @@
-module.exports = {
+var o = {
   'assign': require('./assign'),
   'assignIn': require('./assignIn'),
   'assignInWith': require('./assignInWith'),
@@ -47,3 +47,5 @@ module.exports = {
   'values': require('./values'),
   'valuesIn': require('./valuesIn')
 };
+o.default = o;
+module.exports = o;

@@ -29,5 +29,5 @@ function toPath(value) {
   }
   return isSymbol(value) ? [value] : copyArray(stringToPath(toString(value)));
 }
-
+toPath.default = toPath;
 module.exports = toPath;

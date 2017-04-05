@@ -63,5 +63,5 @@ var templateSettings = {
     '_': { 'escape': escape }
   }
 };
-
+templateSettings.default = templateSettings;
 module.exports = templateSettings;

@@ -56,5 +56,5 @@ function cond(pairs) {
     }
   });
 }
-
+cond.default = cond;
 module.exports = cond;

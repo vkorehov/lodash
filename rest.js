@@ -36,5 +36,5 @@ function rest(func, start) {
   start = start === undefined ? start : toInteger(start);
   return baseRest(func, start);
 }
-
+rest.default = rest;
 module.exports = rest;

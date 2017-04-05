@@ -30,5 +30,5 @@ var baseValues = require('./_baseValues'),
 function values(object) {
   return object == null ? [] : baseValues(object, keys(object));
 }
-
+values.default = values;
 module.exports = values;

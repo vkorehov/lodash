@@ -19,5 +19,5 @@ var toString = require('./toString'),
 function capitalize(string) {
   return upperFirst(toString(string).toLowerCase());
 }
-
+capitalize.default = capitalize;
 module.exports = capitalize;

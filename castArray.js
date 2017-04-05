@@ -40,5 +40,5 @@ function castArray() {
   var value = arguments[0];
   return isArray(value) ? value : [value];
 }
-
+castArray.default = castArray;
 module.exports = castArray;

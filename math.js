@@ -1,4 +1,4 @@
-module.exports = {
+var m = {
   'add': require('./add'),
   'ceil': require('./ceil'),
   'divide': require('./divide'),
@@ -15,3 +15,5 @@ module.exports = {
   'sum': require('./sum'),
   'sumBy': require('./sumBy')
 };
+m.default = m;
+module.exports = m;

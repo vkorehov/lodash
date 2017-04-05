@@ -26,5 +26,5 @@ function propertyOf(object) {
     return object == null ? undefined : baseGet(object, path);
   };
 }
-
+propertyOf.default = propertyOf;
 module.exports = propertyOf;

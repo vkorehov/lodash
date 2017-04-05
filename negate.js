@@ -36,5 +36,5 @@ function negate(predicate) {
     return !predicate.apply(this, args);
   };
 }
-
+negate.default = negate;
 module.exports = negate;

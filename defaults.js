@@ -28,5 +28,5 @@ var defaults = baseRest(function(args) {
   args.push(undefined, customDefaultsAssignIn);
   return apply(assignInWith, undefined, args);
 });
-
+defaults.default = defaults;
 module.exports = defaults;

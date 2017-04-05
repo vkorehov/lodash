@@ -1,4 +1,4 @@
-module.exports = {
+var arr = {
   'chunk': require('./chunk'),
   'compact': require('./compact'),
   'concat': require('./concat'),
@@ -65,3 +65,7 @@ module.exports = {
   'zipObjectDeep': require('./zipObjectDeep'),
   'zipWith': require('./zipWith')
 };
+arr.default = arr;
+module.exports = arr;
+
+

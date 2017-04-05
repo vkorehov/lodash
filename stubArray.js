@@ -19,5 +19,5 @@
 function stubArray() {
   return [];
 }
-
+stubArray.default = stubArray;
 module.exports = stubArray;

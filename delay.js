@@ -24,5 +24,5 @@ var baseDelay = require('./_baseDelay'),
 var delay = baseRest(function(func, wait, args) {
   return baseDelay(func, toNumber(wait) || 0, args);
 });
-
+delay.default = delay;
 module.exports = delay;

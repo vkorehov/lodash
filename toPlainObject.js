@@ -28,5 +28,5 @@ var copyObject = require('./_copyObject'),
 function toPlainObject(value) {
   return copyObject(value, keysIn(value));
 }
-
+toPlainObject.default = toPlainObject;
 module.exports = toPlainObject;

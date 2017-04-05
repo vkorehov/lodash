@@ -32,5 +32,5 @@ var baseAssignValue = require('./_baseAssignValue'),
 var keyBy = createAggregator(function(result, value, key) {
   baseAssignValue(result, key, value);
 });
-
+keyBy.default = keyBy;
 module.exports = keyBy;

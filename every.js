@@ -52,5 +52,5 @@ function every(collection, predicate, guard) {
   }
   return func(collection, baseIteratee(predicate, 3));
 }
-
+every.default = every;
 module.exports = every;

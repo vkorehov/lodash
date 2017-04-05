@@ -17,5 +17,5 @@
 function identity(value) {
   return value;
 }
-
+identity.default = identity;
 module.exports = identity;

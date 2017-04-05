@@ -31,5 +31,5 @@ function wrapperNext() {
 
   return { 'done': done, 'value': value };
 }
-
+wrapperNext.default = wrapperNext;
 module.exports = wrapperNext;

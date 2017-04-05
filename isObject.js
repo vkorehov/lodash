@@ -27,5 +27,5 @@ function isObject(value) {
   var type = typeof value;
   return value != null && (type == 'object' || type == 'function');
 }
-
+isObject.default = isObject;
 module.exports = isObject;

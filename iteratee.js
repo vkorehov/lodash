@@ -49,5 +49,5 @@ var CLONE_DEEP_FLAG = 1;
 function iteratee(func) {
   return baseIteratee(typeof func == 'function' ? func : baseClone(func, CLONE_DEEP_FLAG));
 }
-
+iteratee.default = iteratee;
 module.exports = iteratee;

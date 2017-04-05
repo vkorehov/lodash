@@ -22,5 +22,5 @@ var createRound = require('./_createRound');
  * // => 4100
  */
 var round = createRound('round');
-
+round.default = round;
 module.exports = round;

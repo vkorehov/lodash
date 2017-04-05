@@ -35,5 +35,5 @@ var baseMerge = require('./_baseMerge'),
 var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
   baseMerge(object, source, srcIndex, customizer);
 });
-
+mergeWith.default = mergeWith;
 module.exports = mergeWith;

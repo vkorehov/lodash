@@ -35,5 +35,5 @@ function forIn(object, iteratee) {
     ? object
     : baseFor(object, castFunction(iteratee), keysIn);
 }
-
+forIn.default = forIn;
 module.exports = forIn;

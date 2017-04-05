@@ -24,5 +24,5 @@ var arrayFilter = require('./_arrayFilter'),
 var xor = baseRest(function(arrays) {
   return baseXor(arrayFilter(arrays, isArrayLikeObject));
 });
-
+xor.default = xor;
 module.exports = xor;

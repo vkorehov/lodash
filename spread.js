@@ -59,5 +59,5 @@ function spread(func, start) {
     return apply(func, this, otherArgs);
   });
 }
-
+spread.default = spread;
 module.exports = spread;

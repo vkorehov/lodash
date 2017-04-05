@@ -19,5 +19,5 @@ var baseAt = require('./_baseAt'),
  * // => [3, 4]
  */
 var at = flatRest(baseAt);
-
+at.default = at;
 module.exports = at;

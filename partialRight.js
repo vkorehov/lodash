@@ -45,5 +45,5 @@ var partialRight = baseRest(function(func, partials) {
 
 // Assign default placeholders.
 partialRight.placeholder = {};
-
+partialRight.default = partialRight;
 module.exports = partialRight;

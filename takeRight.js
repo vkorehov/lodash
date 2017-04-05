@@ -35,5 +35,5 @@ function takeRight(array, n, guard) {
   n = length - n;
   return baseSlice(array, n < 0 ? 0 : n, length);
 }
-
+takeRight.default = takeRight;
 module.exports = takeRight;

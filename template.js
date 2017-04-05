@@ -234,5 +234,5 @@ function template(string, options, guard) {
   }
   return result;
 }
-
+template.default = template;
 module.exports = template;

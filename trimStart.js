@@ -39,5 +39,5 @@ function trimStart(string, chars, guard) {
 
   return castSlice(strSymbols, start).join('');
 }
-
+trimStart.default = trimStart;
 module.exports = trimStart;

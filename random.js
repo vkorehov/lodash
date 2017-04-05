@@ -78,5 +78,5 @@ function random(lower, upper, floating) {
   }
   return baseRandom(lower, upper);
 }
-
+random.default = random;
 module.exports = random;

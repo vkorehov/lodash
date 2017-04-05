@@ -35,5 +35,5 @@ var unionBy = baseRest(function(arrays) {
   }
   return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), baseIteratee(iteratee, 2));
 });
-
+unionBy.default = unionBy;
 module.exports = unionBy;

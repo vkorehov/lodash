@@ -27,5 +27,5 @@ var baseFunctions = require('./_baseFunctions'),
 function functionsIn(object) {
   return object == null ? [] : baseFunctions(object, keysIn(object));
 }
-
+functionsIn.default = functionsIn;
 module.exports = functionsIn;

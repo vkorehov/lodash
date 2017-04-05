@@ -24,5 +24,5 @@ var baseToString = require('./_baseToString');
 function toString(value) {
   return value == null ? '' : baseToString(value);
 }
-
+toString.default = toString;
 module.exports = toString;

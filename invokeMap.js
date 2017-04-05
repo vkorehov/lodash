@@ -37,5 +37,5 @@ var invokeMap = baseRest(function(collection, path, args) {
   });
   return result;
 });
-
+invokeMap.default = invokeMap;
 module.exports = invokeMap;

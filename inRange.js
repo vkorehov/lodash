@@ -51,5 +51,5 @@ function inRange(number, start, end) {
   number = toNumber(number);
   return baseInRange(number, start, end);
 }
-
+inRange.default = inRange;
 module.exports = inRange;

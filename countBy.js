@@ -36,5 +36,5 @@ var countBy = createAggregator(function(result, value, key) {
     baseAssignValue(result, key, 1);
   }
 });
-
+countBy.default = countBy;
 module.exports = countBy;

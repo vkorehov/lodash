@@ -22,5 +22,5 @@
  * // => false
  */
 var isArray = Array.isArray;
-
+isArray.default = isArray;
 module.exports = isArray;

@@ -70,5 +70,5 @@ function mixin(object, source, options) {
 
   return object;
 }
-
+mixin.default = mixin;
 module.exports = mixin;

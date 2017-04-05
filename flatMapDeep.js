@@ -27,5 +27,5 @@ var INFINITY = 1 / 0;
 function flatMapDeep(collection, iteratee) {
   return baseFlatten(map(collection, iteratee), INFINITY);
 }
-
+flatMapDeep.default = flatMapDeep;
 module.exports = flatMapDeep;

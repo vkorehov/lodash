@@ -58,5 +58,5 @@ function isPlainObject(value) {
   return typeof Ctor == 'function' && Ctor instanceof Ctor &&
     funcToString.call(Ctor) == objectCtorString;
 }
-
+isPlainObject.default = isPlainObject;
 module.exports = isPlainObject;

@@ -39,5 +39,5 @@ var pullAt = flatRest(function(array, indexes) {
 
   return result;
 });
-
+pullAt.default = pullAt;
 module.exports = pullAt;

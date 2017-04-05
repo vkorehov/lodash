@@ -20,5 +20,5 @@ function sum(array) {
     ? baseSum(array, identity)
     : 0;
 }
-
+sum.default = sum;
 module.exports = sum;

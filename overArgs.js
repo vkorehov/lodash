@@ -57,5 +57,5 @@ var overArgs = castRest(function(func, transforms) {
     return apply(func, this, args);
   });
 });
-
+overArgs.default = overArgs;
 module.exports = overArgs;

@@ -14,5 +14,5 @@
 function stubString() {
   return '';
 }
-
+stubString.default = stubString;
 module.exports = stubString;

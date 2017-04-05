@@ -25,5 +25,5 @@ function tap(value, interceptor) {
   interceptor(value);
   return value;
 }
-
+tap.default = tap;
 module.exports = tap;

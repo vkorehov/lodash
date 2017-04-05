@@ -24,5 +24,5 @@ function fromPairs(pairs) {
   }
   return result;
 }
-
+fromPairs.default = fromPairs;
 module.exports = fromPairs;

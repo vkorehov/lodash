@@ -38,5 +38,5 @@ function toFinite(value) {
   }
   return value === value ? value : 0;
 }
-
+toFinite.default = toFinite;
 module.exports = toFinite;

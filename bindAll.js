@@ -37,5 +37,5 @@ var bindAll = flatRest(function(object, methodNames) {
   });
   return object;
 });
-
+bindAll.default = bindAll;
 module.exports = bindAll;

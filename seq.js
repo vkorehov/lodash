@@ -1,4 +1,4 @@
-module.exports = {
+var s = {
   'at': require('./wrapperAt'),
   'chain': require('./chain'),
   'commit': require('./commit'),
@@ -14,3 +14,5 @@ module.exports = {
   'valueOf': require('./valueOf'),
   'wrapperChain': require('./wrapperChain')
 };
+s.default = s;
+module.exports = s;

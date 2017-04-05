@@ -26,5 +26,5 @@ var intersection = baseRest(function(arrays) {
     ? baseIntersection(mapped)
     : [];
 });
-
+intersection.default = intersection;
 module.exports = intersection;

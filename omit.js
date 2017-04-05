@@ -53,5 +53,5 @@ var omit = flatRest(function(object, paths) {
   }
   return result;
 });
-
+omit.default = omit;
 module.exports = omit;

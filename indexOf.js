@@ -38,5 +38,5 @@ function indexOf(array, value, fromIndex) {
   }
   return baseIndexOf(array, value, index);
 }
-
+indexOf.default = indexOf;
 module.exports = indexOf;

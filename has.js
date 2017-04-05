@@ -31,5 +31,5 @@ var baseHas = require('./_baseHas'),
 function has(object, path) {
   return object != null && hasPath(object, path, baseHas);
 }
-
+has.default = has;
 module.exports = has;

@@ -40,5 +40,5 @@ var differenceBy = baseRest(function(array, values) {
     ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), baseIteratee(iteratee, 2))
     : [];
 });
-
+differenceBy.default = differenceBy;
 module.exports = differenceBy;

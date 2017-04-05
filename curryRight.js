@@ -50,5 +50,5 @@ function curryRight(func, arity, guard) {
 
 // Assign default placeholders.
 curryRight.placeholder = {};
-
+curryRight.default = curryRight;
 module.exports = curryRight;

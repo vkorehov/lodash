@@ -21,5 +21,5 @@ function flattenDeep(array) {
   var length = array == null ? 0 : array.length;
   return length ? baseFlatten(array, INFINITY) : [];
 }
-
+flattenDeep.default = flattenDeep;
 module.exports = flattenDeep;

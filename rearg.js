@@ -29,5 +29,5 @@ var WRAP_REARG_FLAG = 256;
 var rearg = flatRest(function(func, indexes) {
   return createWrap(func, WRAP_REARG_FLAG, undefined, undefined, undefined, indexes);
 });
-
+rearg.default = rearg;
 module.exports = rearg;

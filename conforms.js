@@ -31,5 +31,5 @@ var CLONE_DEEP_FLAG = 1;
 function conforms(source) {
   return baseConforms(baseClone(source, CLONE_DEEP_FLAG));
 }
-
+conforms.default = conforms;
 module.exports = conforms;

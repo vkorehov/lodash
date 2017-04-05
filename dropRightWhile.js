@@ -41,5 +41,5 @@ function dropRightWhile(array, predicate) {
     ? baseWhile(array, baseIteratee(predicate, 3), true, true)
     : [];
 }
-
+dropRightWhile.default = dropRightWhile;
 module.exports = dropRightWhile;

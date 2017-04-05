@@ -30,5 +30,5 @@ var chain = require('./chain');
 function wrapperChain() {
   return chain(this);
 }
-
+wrapperChain.default = wrapperChain;
 module.exports = wrapperChain;

@@ -23,5 +23,5 @@ var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer;
  * // => false
  */
 var isArrayBuffer = nodeIsArrayBuffer ? baseUnary(nodeIsArrayBuffer) : baseIsArrayBuffer;
-
+isArrayBuffer.default = isArrayBuffer;
 module.exports = isArrayBuffer;

@@ -34,5 +34,5 @@ function chain(value) {
   result.__chain__ = true;
   return result;
 }
-
+chain.default = chain;
 module.exports = chain;

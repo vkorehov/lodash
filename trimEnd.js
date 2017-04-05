@@ -39,5 +39,5 @@ function trimEnd(string, chars, guard) {
 
   return castSlice(strSymbols, 0, end).join('');
 }
-
+trimEnd.default = trimEnd;
 module.exports = trimEnd;

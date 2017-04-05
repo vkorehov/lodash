@@ -26,5 +26,5 @@ var createRelationalOperation = require('./_createRelationalOperation');
 var lte = createRelationalOperation(function(value, other) {
   return value <= other;
 });
-
+lte.default = lte;
 module.exports = lte;

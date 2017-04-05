@@ -55,5 +55,5 @@ function findLastIndex(array, predicate, fromIndex) {
   }
   return baseFindIndex(array, baseIteratee(predicate, 3), index, true);
 }
-
+findLastIndex.default = findLastIndex;
 module.exports = findLastIndex;

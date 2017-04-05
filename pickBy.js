@@ -33,5 +33,5 @@ function pickBy(object, predicate) {
     return predicate(value, path[0]);
   });
 }
-
+pickBy.default = pickBy;
 module.exports = pickBy;

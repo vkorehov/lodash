@@ -25,5 +25,5 @@ function min(array) {
     ? baseExtremum(array, identity, baseLt)
     : undefined;
 }
-
+min.default = min;
 module.exports = min;

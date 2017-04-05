@@ -19,5 +19,5 @@ var root = require('./_root');
 var now = function() {
   return root.Date.now();
 };
-
+now.default = now;
 module.exports = now;

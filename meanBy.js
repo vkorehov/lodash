@@ -27,5 +27,5 @@ var baseIteratee = require('./_baseIteratee'),
 function meanBy(array, iteratee) {
   return baseMean(array, baseIteratee(iteratee, 2));
 }
-
+meanBy.default = meanBy;
 module.exports = meanBy;

@@ -25,5 +25,5 @@ function max(array) {
     ? baseExtremum(array, identity, baseGt)
     : undefined;
 }
-
+max.default = max;
 module.exports = max;

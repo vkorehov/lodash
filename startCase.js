@@ -25,5 +25,5 @@ var createCompounder = require('./_createCompounder'),
 var startCase = createCompounder(function(result, word, index) {
   return result + (index ? ' ' : '') + upperFirst(word);
 });
-
+startCase.default = startCase;
 module.exports = startCase;

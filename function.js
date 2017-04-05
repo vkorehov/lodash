@@ -1,4 +1,4 @@
-module.exports = {
+var fun = {
   'after': require('./after'),
   'ary': require('./ary'),
   'before': require('./before'),
@@ -23,3 +23,5 @@ module.exports = {
   'unary': require('./unary'),
   'wrap': require('./wrap')
 };
+fun.default = fun;
+module.exports = fun;

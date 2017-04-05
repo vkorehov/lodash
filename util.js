@@ -1,4 +1,4 @@
-module.exports = {
+var u = {
   'attempt': require('./attempt'),
   'bindAll': require('./bindAll'),
   'cond': require('./cond'),
@@ -32,3 +32,5 @@ module.exports = {
   'toPath': require('./toPath'),
   'uniqueId': require('./uniqueId')
 };
+u.default = u;
+module.exports = u;

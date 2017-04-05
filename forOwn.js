@@ -32,5 +32,5 @@ var baseForOwn = require('./_baseForOwn'),
 function forOwn(object, iteratee) {
   return object && baseForOwn(object, castFunction(iteratee));
 }
-
+forOwn.default = forOwn;
 module.exports = forOwn;

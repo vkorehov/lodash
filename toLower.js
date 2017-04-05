@@ -24,5 +24,5 @@ var toString = require('./toString');
 function toLower(value) {
   return toString(value).toLowerCase();
 }
-
+toLower.default = toLower;
 module.exports = toLower;

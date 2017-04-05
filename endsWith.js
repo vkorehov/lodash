@@ -39,5 +39,5 @@ function endsWith(string, target, position) {
   position -= target.length;
   return position >= 0 && string.slice(position, end) == target;
 }
-
+endsWith.default = endsWith;
 module.exports = endsWith;

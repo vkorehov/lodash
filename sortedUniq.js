@@ -20,5 +20,5 @@ function sortedUniq(array) {
     ? baseSortedUniq(array)
     : [];
 }
-
+sortedUniq.default = sortedUniq;
 module.exports = sortedUniq;

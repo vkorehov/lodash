@@ -34,5 +34,5 @@ function isNumber(value) {
   return typeof value == 'number' ||
     (isObjectLike(value) && baseGetTag(value) == numberTag);
 }
-
+isNumber.default = isNumber;
 module.exports = isNumber;

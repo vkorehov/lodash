@@ -26,5 +26,5 @@ var castFunction = require('./_castFunction'),
 function wrap(value, wrapper) {
   return partial(castFunction(wrapper), value);
 }
-
+wrap.default = wrap;
 module.exports = wrap;

@@ -23,5 +23,5 @@ var nodeIsMap = nodeUtil && nodeUtil.isMap;
  * // => false
  */
 var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
-
+isMap.default = isMap;
 module.exports = isMap;

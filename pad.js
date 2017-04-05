@@ -45,5 +45,5 @@ function pad(string, length, chars) {
     createPadding(nativeCeil(mid), chars)
   );
 }
-
+pad.default = pad;
 module.exports = pad;

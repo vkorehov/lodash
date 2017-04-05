@@ -27,5 +27,5 @@ function sortedIndexOf(array, value) {
   }
   return -1;
 }
-
+sortedIndexOf.default = sortedIndexOf;
 module.exports = sortedIndexOf;

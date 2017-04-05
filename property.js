@@ -28,5 +28,5 @@ var baseProperty = require('./_baseProperty'),
 function property(path) {
   return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
 }
-
+property.default = property;
 module.exports = property;

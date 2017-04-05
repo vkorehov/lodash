@@ -61,5 +61,5 @@ function transform(object, iteratee, accumulator) {
   });
   return accumulator;
 }
-
+transform.default = transform;
 module.exports = transform;

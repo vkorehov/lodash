@@ -37,5 +37,5 @@ var createRange = require('./_createRange');
  * // => []
  */
 var rangeRight = createRange(true);
-
+rangeRight.default = rangeRight;
 module.exports = rangeRight;

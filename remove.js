@@ -49,5 +49,5 @@ function remove(array, predicate) {
   basePullAt(array, indexes);
   return result;
 }
-
+remove.default = remove;
 module.exports = remove;

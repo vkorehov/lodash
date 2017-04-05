@@ -19,5 +19,5 @@
 function wrapperToIterator() {
   return this;
 }
-
+wrapperToIterator.default = wrapperToIterator;
 module.exports = wrapperToIterator;

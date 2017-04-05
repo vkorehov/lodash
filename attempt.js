@@ -31,5 +31,5 @@ var attempt = baseRest(function(func, args) {
     return isError(e) ? e : new Error(e);
   }
 });
-
+attempt.default = attempt;
 module.exports = attempt;

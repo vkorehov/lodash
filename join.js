@@ -22,5 +22,5 @@ var nativeJoin = arrayProto.join;
 function join(array, separator) {
   return array == null ? '' : nativeJoin.call(array, separator);
 }
-
+join.default = join;
 module.exports = join;

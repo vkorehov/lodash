@@ -27,5 +27,5 @@ function forEachRight(collection, iteratee) {
   var func = isArray(collection) ? arrayEachRight : baseEachRight;
   return func(collection, castFunction(iteratee));
 }
-
+forEachRight.default = forEachRight;
 module.exports = forEachRight;

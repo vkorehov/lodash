@@ -143,5 +143,5 @@ function lodash(value) {
 // Ensure wrappers are instances of `baseLodash`.
 lodash.prototype = baseLodash.prototype;
 lodash.prototype.constructor = lodash;
-
+lodash.default = lodash;
 module.exports = lodash;

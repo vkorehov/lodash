@@ -18,5 +18,5 @@ var baseMean = require('./_baseMean'),
 function mean(array) {
   return baseMean(array, identity);
 }
-
+mean.default = mean;
 module.exports = mean;

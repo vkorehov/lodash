@@ -28,5 +28,5 @@ function escapeRegExp(string) {
     ? string.replace(reRegExpChar, '\\$&')
     : string;
 }
-
+escapeRegExp.default = escapeRegExp;
 module.exports = escapeRegExp;

@@ -22,5 +22,5 @@ var createRound = require('./_createRound');
  * // => 6100
  */
 var ceil = createRound('ceil');
-
+ceil.default = ceil;
 module.exports = ceil;

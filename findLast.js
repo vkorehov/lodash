@@ -21,5 +21,5 @@ var createFind = require('./_createFind'),
  * // => 3
  */
 var findLast = createFind(findLastIndex);
-
+findLast.default = findLast;
 module.exports = findLast;

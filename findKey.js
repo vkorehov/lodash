@@ -40,5 +40,5 @@ var baseFindKey = require('./_baseFindKey'),
 function findKey(object, predicate) {
   return baseFindKey(object, baseIteratee(predicate, 3), baseForOwn);
 }
-
+findKey.default = findKey;
 module.exports = findKey;

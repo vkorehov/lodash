@@ -64,5 +64,5 @@ var bindKey = baseRest(function(object, key, partials) {
 
 // Assign default placeholders.
 bindKey.placeholder = {};
-
+bindKey.default = bindKey;
 module.exports = bindKey;

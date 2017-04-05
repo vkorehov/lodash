@@ -41,5 +41,5 @@ function unzip(array) {
     return arrayMap(array, baseProperty(index));
   });
 }
-
+unzip.default = unzip;
 module.exports = unzip;

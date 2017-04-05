@@ -41,5 +41,5 @@ function takeWhile(array, predicate) {
     ? baseWhile(array, baseIteratee(predicate, 3))
     : [];
 }
-
+takeWhile.default = takeWhile;
 module.exports = takeWhile;

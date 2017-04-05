@@ -33,5 +33,5 @@ function forInRight(object, iteratee) {
     ? object
     : baseForRight(object, castFunction(iteratee), keysIn);
 }
-
+forInRight.default = forInRight;
 module.exports = forInRight;

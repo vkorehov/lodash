@@ -32,5 +32,5 @@ function toInteger(value) {
 
   return result === result ? (remainder ? result - remainder : result) : 0;
 }
-
+toInteger.default = toInteger;
 module.exports = toInteger;

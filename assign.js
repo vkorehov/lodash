@@ -54,5 +54,5 @@ var assign = createAssigner(function(object, source) {
     }
   }
 });
-
+assign.default = assign;
 module.exports = assign;

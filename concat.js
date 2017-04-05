@@ -39,5 +39,5 @@ function concat() {
   }
   return arrayPush(isArray(array) ? copyArray(array) : [array], baseFlatten(args, 1));
 }
-
+concat.default = concat;
 module.exports = concat;

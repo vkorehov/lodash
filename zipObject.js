@@ -20,5 +20,5 @@ var assignValue = require('./_assignValue'),
 function zipObject(props, values) {
   return baseZipObject(props || [], values || [], assignValue);
 }
-
+zipObject.default = zipObject;
 module.exports = zipObject;

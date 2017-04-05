@@ -25,5 +25,5 @@ var baseIteratee = require('./_baseIteratee'),
 function omitBy(object, predicate) {
   return pickBy(object, negate(baseIteratee(predicate)));
 }
-
+omitBy.default = omitBy;
 module.exports = omitBy;

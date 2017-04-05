@@ -29,5 +29,5 @@ function flattenDepth(array, depth) {
   depth = depth === undefined ? 1 : toInteger(depth);
   return baseFlatten(array, depth);
 }
-
+flattenDepth.default = flattenDepth;
 module.exports = flattenDepth;

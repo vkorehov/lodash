@@ -25,5 +25,5 @@ function replace() {
 
   return args.length < 3 ? string : string.replace(args[1], args[2]);
 }
-
+replace.default = replace;
 module.exports = replace;

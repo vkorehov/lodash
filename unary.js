@@ -18,5 +18,5 @@ var ary = require('./ary');
 function unary(func) {
   return ary(func, 1);
 }
-
+unary.default = unary;
 module.exports = unary;

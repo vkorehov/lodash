@@ -27,5 +27,5 @@ var baseIteratee = require('./_baseIteratee'),
 function uniqBy(array, iteratee) {
   return (array && array.length) ? baseUniq(array, baseIteratee(iteratee, 2)) : [];
 }
-
+uniqBy.default = uniqBy;
 module.exports = uniqBy;

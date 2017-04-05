@@ -41,5 +41,5 @@ function takeRightWhile(array, predicate) {
     ? baseWhile(array, baseIteratee(predicate, 3), false, true)
     : [];
 }
-
+takeRightWhile.default = takeRightWhile;
 module.exports = takeRightWhile;

@@ -1,4 +1,4 @@
-module.exports = {
+var s = {
   'camelCase': require('./camelCase'),
   'capitalize': require('./capitalize'),
   'deburr': require('./deburr'),
@@ -31,3 +31,5 @@ module.exports = {
   'upperFirst': require('./upperFirst'),
   'words': require('./words')
 };
+s.default = s;
+module.exports = s;

@@ -33,5 +33,5 @@ function isFunction(value) {
   var tag = baseGetTag(value);
   return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
 }
-
+isFunction.default = isFunction;
 module.exports = isFunction;

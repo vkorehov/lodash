@@ -37,5 +37,5 @@ function isEqualWith(value, other, customizer) {
   var result = customizer ? customizer(value, other) : undefined;
   return result === undefined ? baseIsEqual(value, other, undefined, customizer) : !!result;
 }
-
+isEqualWith.default = isEqualWith;
 module.exports = isEqualWith;

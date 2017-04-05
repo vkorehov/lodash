@@ -37,5 +37,5 @@ var intersectionWith = baseRest(function(arrays) {
     ? baseIntersection(mapped, undefined, comparator)
     : [];
 });
-
+intersectionWith.default = intersectionWith;
 module.exports = intersectionWith;

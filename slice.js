@@ -33,5 +33,5 @@ function slice(array, start, end) {
   }
   return baseSlice(array, start, end);
 }
-
+slice.default = slice;
 module.exports = slice;

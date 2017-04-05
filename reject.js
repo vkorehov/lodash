@@ -42,5 +42,5 @@ function reject(collection, predicate) {
   var func = isArray(collection) ? arrayFilter : baseFilter;
   return func(collection, negate(baseIteratee(predicate, 3)));
 }
-
+reject.default = reject;
 module.exports = reject;

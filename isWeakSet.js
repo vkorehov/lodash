@@ -24,5 +24,5 @@ var weakSetTag = '[object WeakSet]';
 function isWeakSet(value) {
   return isObjectLike(value) && baseGetTag(value) == weakSetTag;
 }
-
+isWeakSet.default = isWeakSet;
 module.exports = isWeakSet;

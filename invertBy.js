@@ -40,5 +40,5 @@ var invertBy = createInverter(function(result, value, key) {
     result[value] = [key];
   }
 }, baseIteratee);
-
+invertBy.default = invertBy;
 module.exports = invertBy;

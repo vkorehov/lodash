@@ -24,5 +24,5 @@ var WRAP_FLIP_FLAG = 512;
 function flip(func) {
   return createWrap(func, WRAP_FLIP_FLAG);
 }
-
+flip.default = flip;
 module.exports = flip;

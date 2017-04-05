@@ -35,5 +35,5 @@ function dropRight(array, n, guard) {
   n = length - n;
   return baseSlice(array, 0, n < 0 ? 0 : n);
 }
-
+dropRight.default = dropRight;
 module.exports = dropRight;

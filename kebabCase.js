@@ -24,5 +24,5 @@ var createCompounder = require('./_createCompounder');
 var kebabCase = createCompounder(function(result, word, index) {
   return result + (index ? '-' : '') + word.toLowerCase();
 });
-
+kebabCase.default = kebabCase;
 module.exports = kebabCase;

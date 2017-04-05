@@ -24,5 +24,5 @@ var toString = require('./toString');
 function toUpper(value) {
   return toString(value).toUpperCase();
 }
-
+toUpper.default = toUpper;
 module.exports = toUpper;

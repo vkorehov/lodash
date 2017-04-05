@@ -25,5 +25,5 @@ var baseLt = require('./_baseLt'),
  * // => false
  */
 var lt = createRelationalOperation(baseLt);
-
+lt.default = lt;
 module.exports = lt;

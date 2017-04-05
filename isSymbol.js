@@ -25,5 +25,5 @@ function isSymbol(value) {
   return typeof value == 'symbol' ||
     (isObjectLike(value) && baseGetTag(value) == symbolTag);
 }
-
+isSymbol.default = isSymbol;
 module.exports = isSymbol;

@@ -27,5 +27,5 @@ var without = baseRest(function(array, values) {
     ? baseDifference(array, values)
     : [];
 });
-
+without.default = without;
 module.exports = without;

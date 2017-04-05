@@ -28,5 +28,5 @@ var zipWith = baseRest(function(arrays) {
   iteratee = typeof iteratee == 'function' ? (arrays.pop(), iteratee) : undefined;
   return unzipWith(arrays, iteratee);
 });
-
+zipWith.default = zipWith;
 module.exports = zipWith;

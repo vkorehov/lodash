@@ -35,5 +35,5 @@ function padStart(string, length, chars) {
     ? (createPadding(length - strLength, chars) + string)
     : string;
 }
-
+padStart.default = padStart;
 module.exports = padStart;

@@ -29,5 +29,5 @@ function sumBy(array, iteratee) {
     ? baseSum(array, baseIteratee(iteratee, 2))
     : 0;
 }
-
+sumBy.default = sumBy;
 module.exports = sumBy;

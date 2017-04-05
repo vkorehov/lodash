@@ -35,5 +35,5 @@ var xorBy = baseRest(function(arrays) {
   }
   return baseXor(arrayFilter(arrays, isArrayLikeObject), baseIteratee(iteratee, 2));
 });
-
+xorBy.default = xorBy;
 module.exports = xorBy;

@@ -21,5 +21,5 @@ var basePick = require('./_basePick'),
 var pick = flatRest(function(object, paths) {
   return object == null ? {} : basePick(object, paths);
 });
-
+pick.default = pick;
 module.exports = pick;

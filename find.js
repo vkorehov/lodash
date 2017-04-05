@@ -38,5 +38,5 @@ var createFind = require('./_createFind'),
  * // => object for 'barney'
  */
 var find = createFind(findIndex);
-
+find.default = find;
 module.exports = find;

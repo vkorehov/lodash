@@ -20,5 +20,5 @@ var arrayMap = require('./_arrayMap'),
  * // => [4, 1]
  */
 var over = createOver(arrayMap);
-
+over.default = over;
 module.exports = over;

@@ -35,5 +35,5 @@ function clamp(number, lower, upper) {
   }
   return baseClamp(toNumber(number), lower, upper);
 }
-
+clamp.default = clamp;
 module.exports = clamp;

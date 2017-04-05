@@ -44,5 +44,5 @@ var wrapperAt = flatRest(function(paths) {
     return array;
   });
 });
-
+wrapperAt.default = wrapperAt;
 module.exports = wrapperAt;

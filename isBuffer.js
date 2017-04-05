@@ -34,5 +34,5 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
  * // => false
  */
 var isBuffer = nativeIsBuffer || stubFalse;
-
+isBuffer.default = isBuffer;
 module.exports = isBuffer;

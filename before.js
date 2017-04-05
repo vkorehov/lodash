@@ -36,5 +36,5 @@ function before(n, func) {
     return result;
   };
 }
-
+before.default = before;
 module.exports = before;

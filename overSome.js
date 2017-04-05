@@ -26,5 +26,5 @@ var arraySome = require('./_arraySome'),
  * // => false
  */
 var overSome = createOver(arraySome);
-
+overSome.default = overSome;
 module.exports = overSome;

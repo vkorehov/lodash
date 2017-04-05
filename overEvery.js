@@ -26,5 +26,5 @@ var arrayEvery = require('./_arrayEvery'),
  * // => false
  */
 var overEvery = createOver(arrayEvery);
-
+overEvery.default = overEvery;
 module.exports = overEvery;

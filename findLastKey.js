@@ -40,5 +40,5 @@ var baseFindKey = require('./_baseFindKey'),
 function findLastKey(object, predicate) {
   return baseFindKey(object, baseIteratee(predicate, 3), baseForOwnRight);
 }
-
+findLastKey.default = findLastKey;
 module.exports = findLastKey;

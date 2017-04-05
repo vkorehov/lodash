@@ -35,5 +35,5 @@ function unzipWith(array, iteratee) {
     return apply(iteratee, undefined, group);
   });
 }
-
+unzipWith.default = unzipWith;
 module.exports = unzipWith;

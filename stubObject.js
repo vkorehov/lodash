@@ -19,5 +19,5 @@
 function stubObject() {
   return {};
 }
-
+stubObject.default = stubObject;
 module.exports = stubObject;

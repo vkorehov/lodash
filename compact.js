@@ -27,5 +27,5 @@ function compact(array) {
   }
   return result;
 }
-
+compact.default = compact;
 module.exports = compact;

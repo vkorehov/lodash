@@ -22,5 +22,5 @@ var baseDelay = require('./_baseDelay'),
 var defer = baseRest(function(func, args) {
   return baseDelay(func, 1, args);
 });
-
+defer.default = defer;
 module.exports = defer;

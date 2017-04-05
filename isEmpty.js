@@ -73,5 +73,5 @@ function isEmpty(value) {
   }
   return true;
 }
-
+isEmpty.default = isEmpty;
 module.exports = isEmpty;

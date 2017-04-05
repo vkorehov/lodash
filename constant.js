@@ -22,5 +22,5 @@ function constant(value) {
     return value;
   };
 }
-
+constant.default = constant;
 module.exports = constant;

@@ -42,5 +42,5 @@ function size(collection) {
   }
   return baseKeys(collection).length;
 }
-
+size.default = size;
 module.exports = size;

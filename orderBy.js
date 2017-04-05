@@ -43,5 +43,5 @@ function orderBy(collection, iteratees, orders, guard) {
   }
   return baseOrderBy(collection, iteratees, orders);
 }
-
+orderBy.default = orderBy;
 module.exports = orderBy;

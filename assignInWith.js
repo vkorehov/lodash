@@ -34,5 +34,5 @@ var copyObject = require('./_copyObject'),
 var assignInWith = createAssigner(function(object, source, srcIndex, customizer) {
   copyObject(source, keysIn(source), object, customizer);
 });
-
+assignInWith.default = assignInWith;
 module.exports = assignInWith;

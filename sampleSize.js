@@ -33,5 +33,5 @@ function sampleSize(collection, n, guard) {
   var func = isArray(collection) ? arraySampleSize : baseSampleSize;
   return func(collection, n);
 }
-
+sampleSize.default = sampleSize;
 module.exports = sampleSize;

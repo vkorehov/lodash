@@ -31,5 +31,5 @@ var baseUpdate = require('./_baseUpdate'),
 function update(object, path, updater) {
   return object == null ? object : baseUpdate(object, path, castFunction(updater));
 }
-
+update.default = update;
 module.exports = update;

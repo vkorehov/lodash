@@ -21,5 +21,5 @@ var isObjectLike = require('./isObjectLike'),
 function isElement(value) {
   return isObjectLike(value) && value.nodeType === 1 && !isPlainObject(value);
 }
-
+isElement.default = isElement;
 module.exports = isElement;

@@ -3819,6 +3819,7 @@
     // Define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module.
     define(function() {
+	  lodash.default = lodash;
       return lodash;
     });
   }

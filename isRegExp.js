@@ -23,5 +23,5 @@ var nodeIsRegExp = nodeUtil && nodeUtil.isRegExp;
  * // => false
  */
 var isRegExp = nodeIsRegExp ? baseUnary(nodeIsRegExp) : baseIsRegExp;
-
+isRegExp.default = isRegExp;
 module.exports = isRegExp;

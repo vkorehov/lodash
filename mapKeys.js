@@ -32,5 +32,5 @@ function mapKeys(object, iteratee) {
   });
   return result;
 }
-
+mapKeys.default = mapKeys;
 module.exports = mapKeys;

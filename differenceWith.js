@@ -36,5 +36,5 @@ var differenceWith = baseRest(function(array, values) {
     ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), undefined, comparator)
     : [];
 });
-
+differenceWith.default = differenceWith;
 module.exports = differenceWith;
